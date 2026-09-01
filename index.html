@@ -1611,6 +1611,18 @@
       }
     }
 
+  
+    /* Mobile/anchor fix: Join Beta lands directly on the signup form */
+    #beta-form {
+      scroll-margin-top: 84px;
+    }
+
+    @media (max-width: 720px) {
+      #beta-form {
+        scroll-margin-top: 74px;
+      }
+    }
+
   </style>
 </head>
 
@@ -1630,7 +1642,7 @@
         <a href="#offline">Offline</a>
         <a href="#inventory">Inventory</a>
         <a href="#workflow">How It Works</a>
-        <a href="#beta" class="nav-cta">Join Beta</a>
+        <a href="#beta-form" class="nav-cta">Join Beta</a>
       </div>
     </div>
   </nav>
@@ -1662,7 +1674,7 @@
           </p>
 
           <div class="button-row">
-            <a href="#beta" class="btn btn-primary">Join the Beta</a>
+            <a href="#beta-form" class="btn btn-primary">Join the Beta</a>
             <a href="#time-saving" class="btn btn-secondary">See How It Saves Time</a>
           </div>
 
