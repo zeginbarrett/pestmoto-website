@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PestMoto | Pest Control Operations</title>
+  <meta
+    name="description"
+    content="PestMoto is a modern pest control operations platform for technicians, routes, scheduling, service documentation, chemical records and customer communication."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #07110f;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(7, 17, 15, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #39d98a;
+      color: #07110f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 900;
+      font-size: 21px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      font-size: 14px;
+      color: #bdccc6;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 790px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero:before {
+      content: "";
+      width: 600px;
+      height: 600px;
+      position: absolute;
+      right: -150px;
+      top: 80px;
+      border-radius: 50%;
+      background: rgba(57,217,138,0.12);
+      filter: blur(30px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .coming {
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 100px;
+      background: rgba(57,217,138,0.12);
+      border: 1px solid rgba(57,217,138,0.5);
+      color: #62e6a4;
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 1.4px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(54px, 8vw, 92px);
+      line-height: .95;
+      letter-spacing: -5px;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: #39d98a;
+    }
+
+    .hero h2 {
+      font-size: clamp(23px, 3vw, 34px);
+      font-weight: 500;
+      color: #d2ddd9;
+      line-height: 1.2;
+      margin-bottom: 23px;
+    }
+
+    .hero-copy {
+      color: #9fb0aa;
+      max-width: 650px;
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      padding: 0 25px;
+      border-radius: 13px;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .button-primary {
+      background: #39d98a;
+      color: #07110f;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      background: #59e6a0;
+    }
+
+    .button-secondary {
+      border: 1px solid #34443f;
+      color: #d8e1de;
+      background: #101b18;
+    }
+
+    /* PHONE MOCKUP */
+
+    .phone-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .phone {
+      width: min(355px, 88vw);
+      height: 650px;
+      border: 9px solid #26332f;
+      border-radius: 44px;
+      background: #f5f7f6;
+      box-shadow: 0 40px 90px rgba(0,0,0,.55);
+      overflow: hidden;
+      color: #16201d;
+      position: relative;
+      transform: rotate(3deg);
+    }
+
+    .phone-top {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .speaker {
+      width: 80px;
+      height: 7px;
+      background: #17201e;
+      border-radius: 10px;
+    }
+
+    .app-header {
+      padding: 15px 18px 12px;
+      background: #103d30;
+      color: white;
+    }
+
+    .app-header small {
+      opacity: .72;
+    }
+
+    .app-header h3 {
+      font-size: 24px;
+      margin-top: 3px;
+    }
+
+    .date-row {
+      display: flex;
+      gap: 7px;
+      padding: 13px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .date {
+      min-width: 44px;
+      height: 53px;
+      border-radius: 11px;
+      background: #edf1ef;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 11px;
+    }
+
+    .date strong {
+      font-size: 17px;
+    }
+
+    .date.selected {
+      background: #39d98a;
+      color: #082017;
+    }
+
+    .stop {
+      margin: 10px 12px;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 5px 18px rgba(0,0,0,.08);
+      overflow: hidden;
+    }
+
+    .status {
+      height: 6px;
+      background: #39d98a;
+    }
+
+    .stop-body {
+      padding: 13px;
+    }
+
+    .stop-name {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .stop-address {
+      color: #68736f;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .stop-actions {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 5px;
+    }
+
+    .stop-action {
+      padding: 7px 2px;
+      text-align: center;
+      border-radius: 7px;
+      background: #edf4f1;
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 105px 0;
+    }
+
+    .section-label {
+      color: #39d98a;
+      font-size: 13px;
+      letter-spacing: 1.6px;
+      font-weight: bold;
+      margin-bottom: 11px;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 5vw, 55px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      max-width: 760px;
+      margin-bottom: 20px;
+    }
+
+    .section-copy {
+      max-width: 730px;
+      font-size: 18px;
+      color: #9eafa9;
+    }
+
+    /* FEATURES */
+
+    .features {
+      background: #0a1613;
+    }
+
+    .feature-grid {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      background: #101f1b;
+      border: 1px solid #21332d;
+      padding: 29px;
+      border-radius: 18px;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(57,217,138,.14);
+      color: #39d98a;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .feature h3 {
+      margin-bottom: 9px;
+      font-size: 19px;
+    }
+
+    .feature p {
+      color: #91a39d;
+      font-size: 15px;
+    }
+
+    /* SCREENSHOTS */
+
+    .screens {
+      background: #07110f;
+    }
+
+    .screen-grid {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+    }
+
+    .screen-card {
+      background: #0e1a17;
+      border: 1px solid #21302c;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .mock-screen {
+      height: 440px;
+      background: linear-gradient(145deg,#183c31,#0d1b17);
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .mock-phone {
+      height: 345px;
+      width: 180px;
+      border-radius: 24px;
+      border: 5px solid #35443f;
+      background: #f7f8f8;
+      padding: 12px;
+      color: #18211e;
+      box-shadow: 0 20px 45px rgba(0,0,0,.3);
+    }
+
+    .mock-bar {
+      background: #124936;
+      color: white;
+      padding: 11px 5px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .mock-box {
+      background: #e8eeeb;
+      height: 48px;
+      border-radius: 9px;
+      margin-bottom: 8px;
+    }
+
+    .mock-box.large {
+      height: 100px;
+    }
+
+    .screen-info {
+      padding: 23px;
+    }
+
+    .screen-info h3 {
+      margin-bottom: 5px;
+    }
+
+    .screen-info p {
+      color: #8fa19b;
+      font-size: 14px;
+    }
+
+    /* WORKFLOW */
+
+    .workflow {
+      background: #0a1613;
+    }
+
+    .workflow-grid {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .step {
+      border-top: 2px solid #39d98a;
+      padding-top: 20px;
+    }
+
+    .step-number {
+      color: #39d98a;
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #91a39d;
+      font-size: 14px;
+    }
+
+    /* SPECIALTY */
+
+    .specialty-list {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .specialty-item {
+      border: 1px solid #2d443c;
+      background: #101e1a;
+      border-radius: 100px;
+      padding: 11px 17px;
+      color: #cbd7d3;
+    }
+
+    .specialty-item:before {
+      content: "●";
+      color: #ff615f;
+      margin-right: 9px;
+    }
+
+    /* COMING SOON */
+
+    .cta {
+      text-align: center;
+      padding: 130px 0;
+      background:
+        radial-gradient(circle at center, rgba(57,217,138,.17), transparent 45%),
+        #07110f;
+    }
+
+    .cta h2 {
+      font-size: clamp(44px, 7vw, 78px);
+      letter-spacing: -3px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      color: #a8b8b3;
+      font-size: 18px;
+      max-width: 650px;
+      margin: 0 auto 28px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #1d2925;
+      padding: 34px 0;
+      color: #74837e;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        padding-top: 80px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-bottom: 100px;
+      }
+
+      .phone {
+        transform: none;
+      }
+
+      .feature-grid,
+      .screen-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .workflow-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-links {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .feature-grid,
+      .screen-grid,
+      .workflow-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .mock-screen {
+        height: 420px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+
+    <a href="#" class="logo">
+      <div class="logo-mark">P</div>
+      PestMoto
+    </a>
+
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#screens">Preview</a>
+      <a href="#workflow">How It Works</a>
+      <a href="#coming-soon">Coming Soon</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<header class="hero">
+
+  <div class="container hero-grid">
+
+    <div>
+
+      <div class="coming">
+        COMING SOON
+      </div>
+
+      <h1>
+        Pest<span>Moto</span>
+      </h1>
+
+      <h2>
+        Pest control operations.<br>
+        In motion.
+      </h2>
+
+      <p class="hero-copy">
+        PestMoto brings technician routes, scheduling, customer information,
+        service documentation, treatment records and office operations together
+        in one streamlined platform built for pest control companies.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#screens" class="button button-primary">
+          See PestMoto
+        </a>
+
+        <a href="#features" class="button button-secondary">
+          Explore Features
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="phone-wrap">
+
+      <div class="phone">
+
+        <div class="phone-top">
+          <div class="speaker"></div>
+        </div>
+
+        <div class="app-header">
+          <small>Monday • Route</small>
+          <h3>Good morning</h3>
+        </div>
+
+        <div class="date-row">
+
+          <div class="date">
+            MON
+            <strong>31</strong>
+          </div>
+
+          <div class="date selected">
+            TUE
+            <strong>1</strong>
+          </div>
+
+          <div class="date">
+            WED
+            <strong>2</strong>
+          </div>
+
+          <div class="date">
+            THU
+            <strong>3</strong>
+          </div>
+
+          <div class="date">
+            FRI
+            <strong>4</strong>
+          </div>
+
+        </div>
+
+
+        <div class="stop">
+          <div class="status"></div>
+
+          <div class="stop-body">
+
+            <div class="stop-name">
+              Johnson Residence
+            </div>
+
+            <div class="stop-address">
+              1224 Oak Ridge Drive
+            </div>
+
+            <div class="stop-actions">
+              <div class="stop-action">NOTIFY</div>
+              <div class="stop-action">NAVIGATE</div>
+              <div class="stop-action">SERVICE</div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="stop">
+          <div class="status" style="background:#ffc94d;"></div>
+
+          <div class="stop-body">
+
+            <div class="stop-name">
+              Garcia Residence
+            </div>
+
+            <div class="stop-address">
+              800 Willow Creek Road
+            </div>
+
+            <div class="stop-actions">
+              <div class="stop-action">NOTIFY</div>
+              <div class="stop-action">NAVIGATE</div>
+              <div class="stop-action">SERVICE</div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="stop">
+
+          <div class="stop-body">
+
+            <div class="stop-name">
+              Williams Residence
+            </div>
+
+            <div class="stop-address">
+              3110 Forest Bend
+            </div>
+
+            <div class="stop-actions">
+              <div class="stop-action">NOTIFY</div>
+              <div class="stop-action">NAVIGATE</div>
+              <div class="stop-action">SERVICE</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<section class="features" id="features">
+
+  <div class="container">
+
+    <div class="section-label">
+      BUILT FOR THE FIELD
+    </div>
+
+    <h2 class="section-title">
+      Less paperwork. More pest control.
+    </h2>
+
+    <p class="section-copy">
+      PestMoto is designed around the real work technicians and office teams
+      perform every day.
+    </p>
+
+
+    <div class="feature-grid">
+
+      <div class="feature">
+        <div class="feature-icon">▦</div>
+        <h3>Route Scheduling</h3>
+        <p>
+          View multiple service days, organize technician routes and move stops
+          between dates without fighting the software.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">⌖</div>
+        <h3>Route Map</h3>
+        <p>
+          See the day's scheduled customers geographically and jump directly
+          into customer information and service actions.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">✓</div>
+        <h3>Fast Service Workflow</h3>
+        <p>
+          Technicians record pest activity and treatments using quick selections
+          instead of writing repetitive service notes.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">⌂</div>
+        <h3>Customer Details</h3>
+        <p>
+          Access customer information, office notes, recent communication,
+          service history and technician actions in one place.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">⚗</div>
+        <h3>Treatment Records</h3>
+        <p>
+          Company-defined treatment rules help automatically create accurate
+          product and application records from technician selections.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">✦</div>
+        <h3>Smart Service Summaries</h3>
+        <p>
+          Turn technician selections into clear internal records and
+          customer-friendly service summaries automatically.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="screens" id="screens">
+
+  <div class="container">
+
+    <div class="section-label">
+      PESTMOTO PREVIEW
+    </div>
+
+    <h2 class="section-title">
+      One system from the office to the technician.
+    </h2>
+
+    <p class="section-copy">
+      These preview panels will be replaced with real PestMoto screenshots
+      as development progresses.
+    </p>
+
+
+    <div class="screen-grid">
+
+
+      <div class="screen-card">
+
+        <div class="mock-screen">
+
+          <div class="mock-phone">
+            <div class="mock-bar">Today's Route</div>
+            <div class="mock-box"></div>
+            <div class="mock-box"></div>
+            <div class="mock-box"></div>
+            <div class="mock-box"></div>
+          </div>
+
+        </div>
+
+        <div class="screen-info">
+          <h3>Technician Route</h3>
+          <p>
+            Fast access to customers, notifications, navigation and service.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="screen-card">
+
+        <div class="mock-screen">
+
+          <div class="mock-phone">
+            <div class="mock-bar">Customer Details</div>
+            <div class="mock-box large"></div>
+            <div class="mock-box"></div>
+            <div class="mock-box"></div>
+          </div>
+
+        </div>
+
+        <div class="screen-info">
+          <h3>Customer Details</h3>
+          <p>
+            Service information, notes, history and actions without leaving the
+            customer record.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="screen-card">
+
+        <div class="mock-screen">
+
+          <div class="mock-phone">
+            <div class="mock-bar">Service</div>
+            <div class="mock-box"></div>
+            <div class="mock-box large"></div>
+            <div class="mock-box"></div>
+          </div>
+
+        </div>
+
+        <div class="screen-info">
+          <h3>Service Workflow</h3>
+          <p>
+            Structured selections capture what happened without forcing
+            technicians to write an essay.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="workflow" id="workflow">
+
+  <div class="container">
+
+    <div class="section-label">
+      ONE SIMPLE FLOW
+    </div>
+
+    <h2 class="section-title">
+      From scheduled stop to finished service.
+    </h2>
+
+
+    <div class="workflow-grid">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Schedule</h3>
+        <p>
+          Office staff assigns the customer, date and technician.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Service</h3>
+        <p>
+          The technician records pest activity and treatments quickly.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Document</h3>
+        <p>
+          PestMoto builds treatment, chemical and service records automatically.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3>Communicate</h3>
+        <p>
+          Customers receive clear information about their completed service.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section>
+
+  <div class="container">
+
+    <div class="section-label">
+      MORE OPPORTUNITIES
+    </div>
+
+    <h2 class="section-title">
+      Help the office see what technicians see.
+    </h2>
+
+    <p class="section-copy">
+      When technicians encounter specialty pest activity, PestMoto can flag the
+      account for office follow-up, inspection or additional service.
+    </p>
+
+
+    <div class="specialty-list">
+
+      <div class="specialty-item">
+        Mosquitoes
+      </div>
+
+      <div class="specialty-item">
+        Termites
+      </div>
+
+      <div class="specialty-item">
+        Bed Bugs
+      </div>
+
+      <div class="specialty-item">
+        Roaches
+      </div>
+
+      <div class="specialty-item">
+        Rats / Mice
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="cta" id="coming-soon">
+
+  <div class="container">
+
+    <div class="coming">
+      CURRENTLY IN DEVELOPMENT
+    </div>
+
+    <h2>
+      PestMoto is coming.
+    </h2>
+
+    <p>
+      A new pest control operations platform built to make the technician's
+      day easier and give the office the information it needs.
+    </p>
+
+    <a href="#screens" class="button button-primary">
+      Preview PestMoto
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div>
+      <strong>PestMoto</strong>
+    </div>
+
+    <div>
+      pestmoto.com
+    </div>
+
+    <div>
+      © 2026 PestMoto
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
