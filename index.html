@@ -1,3 +1,31 @@
+
+
+Pasted text(3).txt
+Document
+update my web page to include our new feature. Proof of Service Videos! Technitions record 20 second clips the customer sees after service via email. 
+
+
+can you think of anything to make it better
+
+
+it looks so dull. can you add some tastful backround
+
+Updated the page with:
+
+Prominent “Proof of Service Videos” section
+
+20-second recording and email-delivery preview
+
+Automatic 30-day expiration messaging
+
+Richer navy/teal background with subtle route-grid texture
+
+More depth and hover effects on feature cards
+
+Updated navigation and search/social descriptions
+
+Download PestMoto-Website.html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +34,10 @@
   <meta name="theme-color" content="#174E9C">
 
   <title>PestMoto | Pest Control Operations, In Motion</title>
-  <meta name="description" content="PestMoto is a modern pest control operations platform for technician routes, multi-day scheduling, customer records, treatment documentation, chemical records, service history and office follow-up.">
+  <meta name="description" content="PestMoto is a modern pest control operations platform for technician routes, service documentation, chemical records, inventory and 20-second Proof of Service Videos delivered to customers by email.">
 
   <meta property="og:title" content="PestMoto | Coming Soon">
-  <meta property="og:description" content="Pest control operations, in motion. Join the PestMoto beta.">
+  <meta property="og:description" content="Faster service closeout, cleaner records and 20-second Proof of Service Videos customers can see after the job.">
   <meta property="og:type" content="website">
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23174E9C'/%3E%3Cpath d='M32 9 50 17v14c0 12-7.5 20-18 24C21.5 51 14 43 14 31V17z' fill='%23fff'/%3E%3Ccircle cx='32' cy='31' r='9' fill='%230D8A7B'/%3E%3Ccircle cx='32' cy='21' r='5' fill='%23174E9C'/%3E%3C/svg%3E">
@@ -46,7 +74,14 @@
     body {
       margin: 0;
       color: var(--text);
-      background: var(--background);
+      background-color: #F4F7FC;
+      background-image:
+        radial-gradient(circle at 8% 18%, rgba(23,78,156,.10), transparent 25%),
+        radial-gradient(circle at 93% 46%, rgba(13,138,123,.09), transparent 24%),
+        linear-gradient(rgba(23,78,156,.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23,78,156,.022) 1px, transparent 1px);
+      background-size: auto, auto, 44px 44px, 44px 44px;
+      background-attachment: fixed;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
@@ -184,9 +219,13 @@
       overflow: hidden;
       padding: 72px 0 86px;
       background:
-        radial-gradient(circle at 85% 20%, rgba(217,231,255,.92), transparent 31%),
-        radial-gradient(circle at 75% 68%, rgba(205,239,234,.7), transparent 26%),
-        linear-gradient(180deg, #fff 0%, #f7f8fc 100%);
+        linear-gradient(rgba(23,78,156,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23,78,156,.035) 1px, transparent 1px),
+        radial-gradient(circle at 88% 16%, rgba(111,164,255,.32), transparent 30%),
+        radial-gradient(circle at 70% 72%, rgba(57,205,180,.23), transparent 27%),
+        radial-gradient(circle at 10% 5%, rgba(255,255,255,.96), transparent 35%),
+        linear-gradient(135deg, #ffffff 0%, #eef4ff 58%, #eaf8f5 100%);
+      background-size: 52px 52px, 52px 52px, auto, auto, auto, auto;
     }
 
     .hero::before {
@@ -197,7 +236,21 @@
       right: -230px;
       top: -250px;
       border-radius: 50%;
-      background: rgba(23,78,156,.07);
+      border: 52px solid rgba(23,78,156,.055);
+      background: rgba(255,255,255,.10);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      width: 520px;
+      height: 520px;
+      left: -370px;
+      bottom: -390px;
+      border: 70px solid rgba(13,138,123,.06);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
     .hero-grid {
@@ -609,8 +662,16 @@
       padding: 27px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: 0 8px 26px rgba(10,43,92,.055);
+      background: rgba(255,255,255,.88);
+      box-shadow: 0 10px 30px rgba(10,43,92,.07);
+      backdrop-filter: blur(10px);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(23,78,156,.28);
+      box-shadow: 0 18px 38px rgba(10,43,92,.12);
     }
 
     .feature-icon {
@@ -641,6 +702,53 @@
       margin: 0;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    #features {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 5% 8%, rgba(23,78,156,.13), transparent 25%),
+        radial-gradient(circle at 96% 86%, rgba(13,138,123,.13), transparent 28%),
+        linear-gradient(145deg, rgba(241,246,255,.96), rgba(247,252,251,.94));
+    }
+
+    #features::before,
+    #features::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    #features::before {
+      width: 380px;
+      height: 380px;
+      top: -250px;
+      right: 6%;
+      border: 54px solid rgba(23,78,156,.045);
+    }
+
+    #features::after {
+      width: 260px;
+      height: 260px;
+      left: -180px;
+      bottom: -155px;
+      border: 42px solid rgba(13,138,123,.05);
+    }
+
+    #features .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    #time-saving {
+      background:
+        linear-gradient(rgba(23,78,156,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23,78,156,.025) 1px, transparent 1px),
+        radial-gradient(circle at 82% 18%, rgba(217,231,255,.72), transparent 25%),
+        rgba(255,255,255,.70);
+      background-size: 48px 48px, 48px 48px, auto, auto;
     }
 
     /* APP PREVIEWS */
@@ -1611,6 +1719,311 @@
       }
     }
 
+    /* PROOF OF SERVICE VIDEOS */
+    .new-feature-pill {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: -4px 0 20px;
+      padding: 9px 13px;
+      border: 1px solid rgba(13, 138, 123, .27);
+      border-radius: 999px;
+      background: rgba(205, 239, 234, .62);
+      color: #08695f;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .035em;
+    }
+
+    .new-feature-pill::before {
+      content: "NEW";
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: var(--secondary);
+      color: #fff;
+      font-size: 9px;
+      letter-spacing: .09em;
+    }
+
+    .new-feature-pill:hover {
+      border-color: var(--secondary);
+      background: var(--secondary-container);
+    }
+
+    .proof-section {
+      position: relative;
+      overflow: hidden;
+      padding: 88px 0;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 83% 22%, rgba(205,239,234,.9), transparent 28%),
+        linear-gradient(135deg, #f5f9ff 0%, #ffffff 55%, #eefbf8 100%);
+    }
+
+    .proof-section::before {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -190px;
+      bottom: -220px;
+      border-radius: 50%;
+      background: rgba(23,78,156,.07);
+    }
+
+    .proof-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(390px, .88fr);
+      align-items: center;
+      gap: 64px;
+    }
+
+    .proof-title {
+      margin: 13px 0 18px;
+      max-width: 700px;
+      color: var(--primary-dark);
+      font-size: clamp(38px, 5vw, 61px);
+      line-height: 1.02;
+      letter-spacing: -.05em;
+    }
+
+    .proof-copy {
+      max-width: 690px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .proof-points {
+      display: grid;
+      gap: 12px;
+      margin: 27px 0 30px;
+    }
+
+    .proof-point {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      align-items: start;
+      gap: 12px;
+    }
+
+    .proof-check {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--secondary-container);
+      color: var(--secondary);
+      font-weight: 950;
+    }
+
+    .proof-point strong {
+      display: block;
+      margin: 1px 0 2px;
+      color: var(--primary-dark);
+      font-size: 15px;
+    }
+
+    .proof-point span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .video-demo {
+      position: relative;
+      max-width: 475px;
+      margin: 0 auto;
+      padding: 22px;
+      border: 1px solid rgba(23,78,156,.14);
+      border-radius: 30px;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 28px 65px rgba(10,43,92,.16);
+    }
+
+    .video-frame {
+      position: relative;
+      min-height: 285px;
+      overflow: hidden;
+      border-radius: 21px;
+      background:
+        linear-gradient(155deg, rgba(23,78,156,.94), rgba(10,43,92,.96));
+    }
+
+    .video-frame::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      right: -65px;
+      bottom: -145px;
+      border-radius: 50%;
+      background: rgba(13,138,123,.42);
+    }
+
+    .recording-badge,
+    .video-length {
+      position: absolute;
+      z-index: 2;
+      top: 17px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .055em;
+    }
+
+    .recording-badge {
+      left: 17px;
+      background: #C62828;
+    }
+
+    .recording-badge::before {
+      content: "●";
+      margin-right: 6px;
+    }
+
+    .video-length {
+      right: 17px;
+      background: rgba(6,22,47,.64);
+    }
+
+    .video-center {
+      position: absolute;
+      z-index: 2;
+      inset: 0;
+      display: grid;
+      place-content: center;
+      justify-items: center;
+      padding: 48px 24px 24px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .play-button {
+      width: 70px;
+      height: 70px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 17px;
+      border: 2px solid rgba(255,255,255,.82);
+      border-radius: 50%;
+      background: rgba(255,255,255,.14);
+      font-size: 26px;
+      line-height: 1;
+      box-shadow: 0 10px 30px rgba(0,0,0,.16);
+    }
+
+    .video-center strong {
+      font-size: 19px;
+    }
+
+    .video-center span {
+      margin-top: 4px;
+      color: #DCE9FF;
+      font-size: 13px;
+    }
+
+    .email-delivery {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      align-items: center;
+      gap: 12px;
+      width: calc(100% - 28px);
+      margin: -25px auto 0;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 14px 32px rgba(10,43,92,.14);
+    }
+
+    .email-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: var(--primary-container);
+      color: var(--primary);
+      font-size: 20px;
+      font-weight: 950;
+    }
+
+    .email-delivery strong,
+    .email-delivery span {
+      display: block;
+    }
+
+    .email-delivery strong {
+      color: var(--primary-dark);
+      font-size: 13px;
+    }
+
+    .email-delivery span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .sent-chip {
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: var(--secondary-container);
+      color: #08695f !important;
+      font-size: 9px !important;
+      font-weight: 900;
+      letter-spacing: .06em;
+    }
+
+    .retention-note {
+      margin: 16px 4px 0;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .proof-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .video-demo {
+        width: min(100%, 520px);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .proof-section {
+        padding: 72px 0;
+      }
+
+      .video-demo {
+        padding: 13px;
+        border-radius: 24px;
+      }
+
+      .video-frame {
+        min-height: 245px;
+      }
+
+      .email-delivery {
+        grid-template-columns: 40px 1fr;
+      }
+
+      .sent-chip {
+        display: none !important;
+      }
+    }
+
   
     /* Mobile/anchor fix: Join Beta lands directly on the signup form */
     #beta-form {
@@ -1637,6 +2050,7 @@
       </a>
 
       <div class="nav-links">
+        <a href="#proof-video">Proof Videos</a>
         <a href="#features">Features</a>
         <a href="#preview">App Preview</a>
         <a href="#offline">Offline</a>
@@ -1659,6 +2073,8 @@
               <div class="coming-inline"><span></span> COMING SOON</div>
             </div>
           </div>
+
+          <a class="new-feature-pill" href="#proof-video">Proof of Service Videos</a>
 
           <h1 class="sales-headline">
             Finish the service.<br>
@@ -1823,12 +2239,78 @@
           <span>Treatment data flows everywhere</span>
         </div>
         <div class="value">
-          <strong>Faster Closeout</strong>
-          <span>Less paperwork after the treatment</span>
+          <strong>20-Second Proof</strong>
+          <span>A completed-service video customers can see</span>
         </div>
         <div class="value">
           <strong>Inventory Visibility</strong>
           <span>Office stock + technician truck inventory</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-section" id="proof-video">
+      <div class="container proof-grid">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> New: Proof of Service Videos</div>
+          <h2 class="proof-title">Don’t just say the service was completed. Show it.</h2>
+          <p class="proof-copy">
+            At the end of a service, the technician can record a quick 20-second
+            clip showing the work that was completed. PestMoto delivers it with
+            the customer’s service email, giving them visible proof even when
+            they were not home.
+          </p>
+
+          <div class="proof-points">
+            <div class="proof-point">
+              <div class="proof-check">20</div>
+              <div>
+                <strong>Short enough to keep the route moving</strong>
+                <span>A simple 20-second limit gives the customer useful context without turning video into another long task.</span>
+              </div>
+            </div>
+
+            <div class="proof-point">
+              <div class="proof-check">✉</div>
+              <div>
+                <strong>Delivered with the completed-service email</strong>
+                <span>The customer receives the clip alongside the summary of what was treated and completed.</span>
+              </div>
+            </div>
+
+            <div class="proof-point">
+              <div class="proof-check">30</div>
+              <div>
+                <strong>Automatically expires after 30 days</strong>
+                <span>Old clips stay out of the technician’s workflow and are removed automatically to keep video storage under control.</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="#beta-form" class="btn btn-primary">Join the Beta</a>
+        </div>
+
+        <div class="video-demo" aria-label="Proof of Service Video customer delivery preview">
+          <div class="video-frame">
+            <div class="recording-badge">RECORDING</div>
+            <div class="video-length">0:20</div>
+            <div class="video-center">
+              <div class="play-button" aria-hidden="true">▶</div>
+              <strong>Your service is complete</strong>
+              <span>Exterior treatment • Johnson Residence</span>
+            </div>
+          </div>
+
+          <div class="email-delivery">
+            <div class="email-icon" aria-hidden="true">✉</div>
+            <div>
+              <strong>Proof of Service Video</strong>
+              <span>Included in the customer’s service email</span>
+            </div>
+            <span class="sent-chip">SENT</span>
+          </div>
+
+          <p class="retention-note">Available to the customer for 30 days, then removed automatically.</p>
         </div>
       </div>
     </section>
@@ -1923,6 +2405,16 @@
               on-device data when cell service is weak or unavailable. Finish
               the stop, save the work locally, then sync automatically when a connection
               is available again.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">▶</div>
+            <h3>Proof of Service Videos</h3>
+            <p>
+              Record a 20-second clip after the job and include it in the
+              customer’s completed-service email. Give customers visible proof,
+              build trust and reduce questions about what was done.
             </p>
           </article>
         </div>
@@ -2533,3 +3025,8 @@
   <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
+
+PestMoto-Website.html
+HTML
+
+
