@@ -3200,6 +3200,76 @@
       }
     }
 
+
+    /* HERO DASHBOARD CLEANUP */
+    .hero-grid-rich {
+      align-items: start;
+    }
+
+    .hero-visual-panel {
+      min-height: 560px;
+      padding-top: 12px;
+    }
+
+    .ops-board {
+      width: min(610px, 100%);
+      overflow: hidden;
+    }
+
+    .ops-board-top {
+      margin-bottom: 14px;
+    }
+
+    .ops-board-top h3 {
+      max-width: 470px;
+      font-size: 24px;
+      line-height: 1.12;
+    }
+
+    .ops-highlight-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .ops-highlight {
+      padding: 12px 12px 11px;
+      border: 1px solid #e3e8f0;
+      border-radius: 15px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      box-shadow: 0 6px 16px rgba(10,43,92,.05);
+    }
+
+    .ops-highlight strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--primary-dark);
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .ops-highlight span {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.38;
+    }
+
+    .ops-float {
+      display: none !important;
+    }
+
+    @media (max-width: 780px) {
+      .ops-highlight-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual-panel {
+        min-height: auto;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -3234,6 +3304,21 @@
             <h3>Today’s route, the next visit and the office picture — all connected.</h3>
           </div>
           <div class="ops-status">LIVE VIEW</div>
+        </div>
+
+        <div class="ops-highlight-row">
+          <div class="ops-highlight">
+            <strong>Next visit created</strong>
+            <span>Recurring customers can land back on the calendar automatically.</span>
+          </div>
+          <div class="ops-highlight">
+            <strong>AI pest identified</strong>
+            <span>Field photos can suggest a likely pest and save it with the account.</span>
+          </div>
+          <div class="ops-highlight">
+            <strong>Restock ready</strong>
+            <span>Upcoming route needs can be compared against truck inventory.</span>
+          </div>
         </div>
 
         <div class="ops-main-grid">
@@ -3307,17 +3392,7 @@
             </ul>
           </div>
         </div>
-
-        <div class="ops-float float-left">
-          <strong>Next Visit Created</strong>
-          <small>Monthly, every-two-months and quarterly customers can land back on the calendar automatically.</small>
-        </div>
-
-        <div class="ops-float float-right">
-          <strong>AI Pest Identification</strong>
-          <small>Snap a photo, suggest a likely pest, and keep the result with the customer record.</small>
-        </div>
-      </div>
+</div>
     </div>
 
     <div class="hero-copy-panel">
