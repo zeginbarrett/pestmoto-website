@@ -2748,6 +2748,458 @@
       }
     }
 
+
+    /* HERO RICH VISUAL REFORMAT */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 26px 0 54px;
+      background:
+        linear-gradient(rgba(23,78,156,.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23,78,156,.028) 1px, transparent 1px),
+        radial-gradient(circle at 88% 18%, rgba(217,231,255,.82), transparent 29%),
+        radial-gradient(circle at 72% 82%, rgba(205,239,234,.42), transparent 25%),
+        linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+      background-size: 38px 38px, 38px 38px, auto, auto, auto;
+    }
+
+    .hero-grid-rich {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(420px, .96fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-visual-panel {
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      align-items: center;
+    }
+
+    .hero-copy-panel {
+      max-width: 690px;
+      padding: 10px 0 8px;
+    }
+
+    .sales-headline {
+      margin: 0;
+      max-width: 700px;
+      color: var(--primary-dark);
+      text-align: left;
+      font-size: clamp(58px, 6vw, 88px);
+      line-height: .95;
+      letter-spacing: -.06em;
+    }
+
+    .sales-headline span {
+      background: linear-gradient(90deg, #1c57a8 0%, #1382b0 45%, #20b36d 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-lead {
+      max-width: 700px;
+      margin: 26px 0 30px;
+      color: #607087;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
+    .button-row {
+      justify-content: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .hero-benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 11px;
+      margin-top: 20px;
+    }
+
+    .hero-benefit {
+      min-height: 118px;
+      padding: 16px 15px;
+      border: 1px solid rgba(192,205,223,.88);
+      border-radius: 17px;
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 10px 25px rgba(10,43,92,.06);
+    }
+
+    .hero-benefit strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--primary-dark);
+      font-size: 13px;
+      line-height: 1.2;
+    }
+
+    .hero-benefit span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.48;
+    }
+
+    .ops-board {
+      position: relative;
+      width: min(620px, 100%);
+      margin-left: 0;
+      padding: 24px;
+      border: 1px solid rgba(23,78,156,.14);
+      border-radius: 30px;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 30px 70px rgba(10,43,92,.16);
+      backdrop-filter: blur(8px);
+    }
+
+    .ops-board-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+    .ops-kicker {
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .ops-board-top h3 {
+      margin: 8px 0 0;
+      max-width: 450px;
+      color: var(--primary-dark);
+      font-size: 28px;
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+
+    .ops-status {
+      flex: 0 0 auto;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: var(--secondary-container);
+      color: #0b6d63;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .ops-main-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+    }
+
+    .ops-calendar-card,
+    .ops-route-card,
+    .ops-map-card,
+    .ops-restock-card {
+      padding: 16px;
+      border: 1px solid #e1e7f0;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(10,43,92,.05);
+    }
+
+    .ops-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .ops-card-head strong {
+      color: var(--primary-dark);
+      font-size: 15px;
+    }
+
+    .ops-card-head span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .ops-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      margin-bottom: 7px;
+    }
+
+    .ops-weekdays span {
+      color: #7a8696;
+      font-size: 9px;
+      font-weight: 900;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .ops-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+    }
+
+    .ops-day {
+      min-height: 54px;
+      padding: 6px 5px;
+      border-radius: 12px;
+      background: #f7f9fd;
+      border: 1px solid #ebeff5;
+      text-align: center;
+    }
+
+    .ops-day em {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--primary-dark);
+      font-style: normal;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .ops-day small {
+      display: block;
+      color: #5b6878;
+      font-size: 8px;
+      line-height: 1.25;
+    }
+
+    .ops-day.active {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .ops-day.active em,
+    .ops-day.active small {
+      color: #fff;
+    }
+
+    .ops-route-stop {
+      margin-top: 9px;
+      padding: 10px 11px;
+      border-left: 4px solid var(--secondary);
+      border-radius: 12px;
+      background: #eef8f5;
+    }
+
+    .ops-route-stop:nth-child(3) {
+      border-left-color: var(--primary);
+      background: #eef4ff;
+    }
+
+    .ops-route-stop:nth-child(4) {
+      border-left-color: #33b56b;
+      background: #eefaf2;
+    }
+
+    .ops-route-stop b {
+      display: block;
+      color: #243246;
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+
+    .ops-route-stop small {
+      display: block;
+      color: #5d6b7c;
+      font-size: 10px;
+      line-height: 1.35;
+    }
+
+    .ops-map {
+      position: relative;
+      min-height: 170px;
+      overflow: hidden;
+      border-radius: 16px;
+      background:
+        linear-gradient(90deg, rgba(23,78,156,.03) 1px, transparent 1px),
+        linear-gradient(rgba(23,78,156,.03) 1px, transparent 1px),
+        linear-gradient(180deg, #fbfcfe 0%, #f4f8ff 100%);
+      background-size: 26px 26px, 26px 26px, auto;
+    }
+
+    .house-shape {
+      position: absolute;
+      left: 50%;
+      top: 52%;
+      width: 86px;
+      height: 66px;
+      transform: translate(-50%, -50%);
+      border: 3px solid rgba(23,78,156,.55);
+      border-radius: 10px;
+      background: rgba(255,255,255,.8);
+    }
+
+    .house-shape::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -34px;
+      width: 66px;
+      height: 66px;
+      transform: translateX(-50%) rotate(45deg);
+      border-top: 3px solid rgba(23,78,156,.55);
+      border-left: 3px solid rgba(23,78,156,.55);
+      background: rgba(255,255,255,.8);
+    }
+
+    .map-pin {
+      position: absolute;
+      padding: 5px 7px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #d8e0eb;
+      box-shadow: 0 8px 18px rgba(10,43,92,.08);
+      color: #34455d;
+      font-size: 9px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .pin-ant { left: 18px; bottom: 20px; }
+    .pin-rodent { right: 12px; top: 26px; }
+    .pin-wasp { left: 24px; top: 18px; }
+
+    .restock-list {
+      margin: 2px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .restock-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 11px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid #e8edf4;
+    }
+
+    .restock-list span {
+      color: #34455c;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .restock-list b {
+      color: var(--primary);
+      font-size: 11px;
+    }
+
+    .ops-float {
+      position: absolute;
+      z-index: 3;
+      width: 220px;
+      padding: 14px 15px;
+      border: 1px solid rgba(23,78,156,.14);
+      border-radius: 17px;
+      background: rgba(255,255,255,.98);
+      box-shadow: 0 18px 40px rgba(10,43,92,.13);
+    }
+
+    .ops-float strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--primary-dark);
+      font-size: 13px;
+    }
+
+    .ops-float small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.42;
+    }
+
+    .float-left {
+      left: -24px;
+      top: 72px;
+      transform: rotate(-4deg);
+    }
+
+    .float-right {
+      right: -26px;
+      bottom: 78px;
+      transform: rotate(3deg);
+    }
+
+    .hero-bug-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @media (max-width: 1180px) {
+      .hero-grid-rich {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .hero-visual-panel {
+        order: 2;
+        min-height: auto;
+      }
+
+      .hero-copy-panel {
+        order: 1;
+        max-width: 760px;
+      }
+
+      .ops-board {
+        width: min(760px, 100%);
+      }
+
+      .ops-float {
+        display: none;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .hero {
+        padding: 18px 0 42px;
+      }
+
+      .sales-headline {
+        font-size: clamp(44px, 12vw, 66px);
+      }
+
+      .hero-benefit-grid,
+      .ops-main-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ops-board {
+        padding: 18px;
+        border-radius: 24px;
+      }
+
+      .ops-board-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .ops-day {
+        min-height: 48px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -2770,138 +3222,130 @@
 </div>
 </nav>
 <main id="top">
-<header class="hero">
-<div class="container hero-grid">
-<div class="hero-copy-panel">
-</div>
-<h1 class="sales-headline">Run the route.<br/><span>Document the work.</span><br/>Keep the office ahead.</h1>
-<p class="hero-lead">PestMoto connects the technician route with the office calendar, customer history, treatment records, proof videos, inventory and recurring scheduling. The field stays simple while the office gets a clearer picture of what happened today — and what needs to happen next.</p>
-<div class="button-row">
-<a class="btn btn-primary" href="#beta-form">Join the Beta</a>
-<a class="btn btn-secondary" href="#time-saving">See How It Saves Time</a>
-</div>
-<div class="hero-benefit-grid">
-<div class="hero-benefit">
-<strong>Route + service</strong>
-<span>Questionnaire instead of blank note boxes</span>
-</div>
-<div class="hero-benefit">
-<strong>Auto-schedule</strong>
-<span>Service + chemical records from the same answers</span>
-</div>
-<div class="hero-benefit">
-<strong>Offline ready</strong>
-<span>Local device data + automatic sync when coverage returns</span>
-</div>
-</div>
-</div>
-<div aria-label="PestMoto route screen preview" class="device-area compact-device">
-<div class="device-glow"></div>
-<div class="phone">
-<div class="phone-status"><div class="phone-notch"></div></div>
-<div class="app-header">
-<div class="tiny-text-btn">CALC</div>
-<div class="app-header-title">
-<strong>Jordan</strong>
-<small>6 stops remaining</small>
-</div>
-<div class="tiny-text-btn">EXIT</div>
-</div>
-<div class="date-strip">
-<div class="date-chip">SUN<strong>30</strong></div>
-<div class="date-chip active">MON<strong>31</strong></div>
-<div class="date-chip">TUE<strong>1</strong></div>
-<div class="date-chip">WED<strong>2</strong></div>
-<div class="date-chip">THU<strong>3</strong></div>
-<div class="date-chip">FRI<strong>4</strong></div>
-</div>
-<div class="mode-toggle">
-<div class="mode active">LIST</div>
-<div class="mode">MAP</div>
-</div>
-<div class="stops">
-<div class="route-card">
-<div class="status-bar status-green"></div>
-<div class="route-content">
-<div class="route-title-row">
-<div>
-<h4>Johnson Residence</h4>
-<div class="route-address">1224 Oak Ridge Dr • 9:00–10:00</div>
-</div>
-</div>
-<div class="route-actions">
-<div class="route-action">NOTIFY</div>
-<div class="route-action">NAVIGATE</div>
-<div class="route-action primary">SERVICE</div>
-</div>
-</div>
-</div>
-<div class="route-card">
-<div class="route-content">
-<div class="route-title-row">
-<div>
-<h4>Garcia Residence</h4>
-<div class="route-address">800 Willow Creek Rd • 10:30–11:30</div>
-</div>
-<div class="flag" title="Office follow-up">⚑</div>
-</div>
-<div class="route-actions">
-<div class="route-action">NOTIFY</div>
-<div class="route-action">NAVIGATE</div>
-<div class="route-action primary">SERVICE</div>
-</div>
-</div>
-</div>
-<div class="route-card">
-<div class="status-bar status-yellow"></div>
-<div class="route-content">
-<div class="route-title-row">
-<div>
-<h4>Williams Residence</h4>
-<div class="route-address">3110 Forest Bend • 12:00–1:00</div>
-</div>
-</div>
-<div class="route-actions">
-<div class="route-action">NOTIFY</div>
-<div class="route-action">NAVIGATE</div>
-<div class="route-action primary">SERVICE</div>
-</div>
-</div>
-</div>
-<div class="route-card">
-<div class="route-content">
-<div class="route-title-row">
-<div>
-<h4>Walker Residence</h4>
-<div class="route-address">86 Lakeview Ln • 1:30–2:30</div>
-</div>
-</div>
-<div class="route-actions">
-<div class="route-action">NOTIFY</div>
-<div class="route-action">NAVIGATE</div>
-<div class="route-action primary">SERVICE</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="float-card float-card-top">
-<span class="float-icon">✓</span>
-<div>
-<strong>One-page closeout</strong>
-<small>Service record + chemical log + customer summary</small>
-</div>
-</div>
-<div class="float-card float-card-bottom">
-<span class="float-icon inventory-icon">▣</span>
-<div>
-<strong>Truck inventory</strong>
-<small>Office stock + each technician truck</small>
-</div>
-</div>
-</div>
 
+<header class="hero">
+  <div class="hero-bug-layer" aria-hidden="true"></div>
+  <div class="container hero-grid hero-grid-rich">
+    <div class="hero-visual-panel">
+      <div class="ops-board">
+        <div class="ops-board-top">
+          <div>
+            <div class="ops-kicker">PestMoto Operations</div>
+            <h3>Today’s route, the next visit and the office picture — all connected.</h3>
+          </div>
+          <div class="ops-status">LIVE VIEW</div>
+        </div>
+
+        <div class="ops-main-grid">
+          <div class="ops-calendar-card">
+            <div class="ops-card-head">
+              <strong>Calendar</strong>
+              <span>Recurring scheduling</span>
+            </div>
+            <div class="ops-weekdays">
+              <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+            <div class="ops-days">
+              <div class="ops-day"><em>1</em><small>6 stops</small></div>
+              <div class="ops-day active"><em>2</em><small>Quarterly</small></div>
+              <div class="ops-day"><em>3</em><small>5 stops</small></div>
+              <div class="ops-day"><em>4</em><small>New start</small></div>
+              <div class="ops-day"><em>5</em><small>7 stops</small></div>
+              <div class="ops-day"><em>6</em></div>
+              <div class="ops-day"><em>7</em></div>
+              <div class="ops-day"><em>8</em><small>Monthly</small></div>
+              <div class="ops-day"><em>9</em><small>Auto added</small></div>
+              <div class="ops-day"><em>10</em><small>8 stops</small></div>
+              <div class="ops-day"><em>11</em><small>Reschedules</small></div>
+              <div class="ops-day"><em>12</em><small>Mosquito</small></div>
+              <div class="ops-day"><em>13</em></div>
+              <div class="ops-day"><em>14</em></div>
+            </div>
+          </div>
+
+          <div class="ops-route-card">
+            <div class="ops-card-head">
+              <strong>Today’s Route</strong>
+              <span>Steven • 8 stops</span>
+            </div>
+            <div class="ops-route-stop">
+              <b>Jackson Residence</b>
+              <small>Quarterly service • Next visit auto-scheduled</small>
+            </div>
+            <div class="ops-route-stop">
+              <b>Holloway Property</b>
+              <small>AI pest ID: American cockroach</small>
+            </div>
+            <div class="ops-route-stop">
+              <b>Pine Terrace</b>
+              <small>Proof video sent • Customer summary ready</small>
+            </div>
+          </div>
+
+          <div class="ops-map-card">
+            <div class="ops-card-head">
+              <strong>Property Treatment Map</strong>
+              <span>Last service markers</span>
+            </div>
+            <div class="ops-map">
+              <div class="house-shape"></div>
+              <span class="map-pin pin-ant">Ant mound</span>
+              <span class="map-pin pin-rodent">Rodent entry</span>
+              <span class="map-pin pin-wasp">Wasp nest</span>
+            </div>
+          </div>
+
+          <div class="ops-restock-card">
+            <div class="ops-card-head">
+              <strong>Truck Restock</strong>
+              <span>Tomorrow morning</span>
+            </div>
+            <ul class="restock-list">
+              <li><span>Alpine WSG</span><b>+ 3 packs</b></li>
+              <li><span>Demand CS</span><b>+ 1 bottle</b></li>
+              <li><span>Bifen Granules</span><b>+ 2 bags</b></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="ops-float float-left">
+          <strong>Next Visit Created</strong>
+          <small>Monthly, every-two-months and quarterly customers can land back on the calendar automatically.</small>
+        </div>
+
+        <div class="ops-float float-right">
+          <strong>AI Pest Identification</strong>
+          <small>Snap a photo, suggest a likely pest, and keep the result with the customer record.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-copy-panel">
+      <h1 class="sales-headline">Run the route.<br><span>Document the work.</span><br>Keep the office ahead.</h1>
+      <p class="hero-lead">PestMoto connects the technician route with the office calendar, customer history, treatment records, proof videos, inventory and recurring scheduling. The field stays simple while the office gets a clearer picture of what happened today — and what needs to happen next.</p>
+      <div class="button-row">
+        <a class="btn btn-primary" href="#beta-form">Join the Beta</a>
+        <a class="btn btn-secondary" href="#time-saving">See How It Saves Time</a>
+      </div>
+
+      <div class="hero-benefit-grid">
+        <div class="hero-benefit">
+          <strong>Calendar + route</strong>
+          <span>See today’s work and keep recurring visits from slipping through the cracks.</span>
+        </div>
+        <div class="hero-benefit">
+          <strong>Property + proof</strong>
+          <span>Track what was found, what was treated and what the customer can actually see.</span>
+        </div>
+        <div class="hero-benefit">
+          <strong>Inventory + follow-up</strong>
+          <span>Restock trucks, capture pest IDs and keep the office ahead of the next stop.</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
+
 <section class="value-strip">
 <div class="container value-grid">
 <div class="value">
