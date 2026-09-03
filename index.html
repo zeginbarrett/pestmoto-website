@@ -1,3 +1,54 @@
+it doesnt match the app, theres no way to change the password, theres no calender, theres no map, its cluncky. 
+Today 6:59 PM
+this is the new postgres.bat 
+the agent is broken, i need you to help. 
+PestMoto-Commercial-V6.6.1-Java-Launcher-Fix(1).zip
+Zip Archive
+i need this fixed and i need a new zip. the office app is bbroken. nothing works. i cant add chem, cant add customers, nothing does anything. login is broken, it doesnt ask for an email address for employees, how else would we do a password reset? please search other apps in this catagory, look at the office pages, please fix everything
+Pasted text(6).txt
+Document
+now i really need you to give me new html for the website and update what we actually offer. keep beta sign up intact. 
+make it sellable. the targets are pest control companies
+i need to add an option to become an investor or partner. a way to generate revenu? how could i tastfully add somthing like that?
+
+Yes. I updated the site to sell PestMoto specifically to pest-control companies, not as a generic field-service app.
+
+Download the new PestMoto website HTML
+
+I kept your existing Join Beta form and Formspree endpoint intact, including the existing name, email, company, technician-count, role and message fields.
+
+I also removed or stopped emphasizing features that were getting ahead of what the current product actually offers. The page now sells the things we’ve actually been building: office dispatch/calendar, customer management, routes, 30/60/90-day recurring service, office map with persistent customer pins and separate technician GPS/route layers, service/chemical rules, truck and office inventory, technician workflow, Proof of Service Videos, company user accounts and offline-first field work.
+
+The positioning is much closer to how established pest-control platforms sell themselves: they lead with scheduling, routing, customer operations, technician productivity and reducing repetitive office work rather than presenting a giant feature dump. FieldRoutes, GorillaDesk and Briostack all emphasize those operational outcomes.
+
+The investor/partner part
+
+I added it tastefully near the bottom, after the customer beta section. I did not put a big “INVEST NOW” button in the hero.
+
+The nav simply says Partners.
+
+The section says:
+
+Interested in helping PestMoto grow beyond the beta?
+
+It then gives three legitimate reasons someone might contact you:
+
+Pest-control operating partner
+Strategic / industry investor
+Technology / channel partner
+
+There is a separate private inquiry form using your existing Formspree account, so those leads can actually reach you.
+
+I also added the line:
+
+Commercial direction: recurring software subscriptions for pest-control companies, designed to scale with team size as PestMoto moves beyond beta.
+
+That gets across the business opportunity without making the public website read like you're begging for investment.
+
+And an important distinction: investment is capital, not revenue. The cleanest actual revenue model for PestMoto is recurring B2B subscriptions from pest-control companies. I would eventually structure it around company/team size, then potentially add optional paid services later. I intentionally did not invent pricing on this version of the website because we haven't settled on pricing yet.
+
+The beta remains the primary sales CTA; the investor/partner opportunity is secondary. That is the balance I'd keep.
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -5,10 +56,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="#174E9C" name="theme-color"/>
-<title>PestMoto | Pest Control Operations, In Motion</title>
-<meta content="PestMoto brings routes, recurring scheduling, service records, Proof of Service Videos, property treatment mapping, AI pest identification, inventory and offline field work into one pest-control operations app." name="description"/>
-<meta content="PestMoto | Coming Soon" property="og:title"/>
-<meta content="Faster service closeout, cleaner records, Proof of Service Videos and automatic recurring scheduling." property="og:description"/>
+<title>PestMoto | Pest Control Software for Office + Field Operations</title>
+<meta content="PestMoto connects pest-control office scheduling, routes, customer records, recurring 30/60/90-day service, live maps, technician GPS, chemical records, inventory, Proof of Service Videos and offline field work." name="description"/>
+<meta content="PestMoto | Pest Control Operations, Connected" property="og:title"/>
+<meta content="One connected workflow for pest-control offices and technicians: schedule, route, service, document and keep the next visit moving." property="og:description"/>
 <meta content="website" property="og:type"/>
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23174E9C'/%3E%3Cpath d='M32 9 50 17v14c0 12-7.5 20-18 24C21.5 51 14 43 14 31V17z' fill='%23fff'/%3E%3Ccircle cx='32' cy='31' r='9' fill='%230D8A7B'/%3E%3Ccircle cx='32' cy='21' r='5' fill='%23174E9C'/%3E%3C/svg%3E" rel="icon"/>
 <style>
@@ -3270,6 +3321,109 @@
       }
     }
 
+  
+
+    /* COMPANY-SPECIFIC SALES SECTION */
+    .company-section {
+      padding: 92px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg,#fff 0%,#f4f8ff 100%);
+    }
+    .company-heading {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 50px;
+      align-items: end;
+    }
+    .company-role-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+      margin-top: 38px;
+    }
+    .company-role-card {
+      min-height: 245px;
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 14px 35px rgba(10,43,92,.07);
+    }
+    .role-kicker {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: var(--primary-container);
+      color: var(--primary);
+      font-size: 10px;
+      font-weight: 950;
+      letter-spacing: .10em;
+    }
+    .company-role-card:nth-child(2) .role-kicker { background: var(--secondary-container); color: var(--secondary); }
+    .company-role-card h3 { margin:0 0 9px;color:var(--primary-dark);font-size:21px;line-height:1.2; }
+    .company-role-card p { margin:0;color:var(--muted);font-size:14px; }
+
+    /* HERO OFFICE MAP */
+    .ops-company-map { position: relative; min-height: 150px; background: linear-gradient(135deg,#eef4fb,#f8fbff); }
+    .route-line { position:absolute;height:3px;border-radius:20px;background:rgba(23,78,156,.25);transform-origin:left center; }
+    .route-line-one { width:122px;left:48px;top:73px;transform:rotate(-18deg); }
+    .route-line-two { width:105px;left:126px;top:86px;transform:rotate(22deg); }
+    .company-pin { position:absolute;width:23px;height:23px;display:grid;place-items:center;border-radius:50%;background:#fff;border:3px solid var(--primary);color:var(--primary);font-size:8px;font-weight:950;box-shadow:0 5px 12px rgba(10,43,92,.13); }
+    .customer-pin-one { left:32px;top:83px; }.customer-pin-two { left:105px;top:54px; }.customer-pin-three { left:211px;top:95px; }
+    .tech-pin { right:31px;top:37px;width:32px;height:32px;border-color:var(--secondary);background:var(--secondary);color:#fff; }
+    .map-layer-label { position:absolute;left:14px;bottom:11px;padding:5px 8px;border-radius:999px;background:#fff;color:var(--muted);font-size:8px;font-weight:850;box-shadow:0 4px 12px rgba(10,43,92,.07); }
+
+    /* LIVE MAP SALES SECTION */
+    .map-sales-section { padding: 92px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:linear-gradient(140deg,#f7fbff,#eef8f6); }
+    .map-sales-grid { display:grid;grid-template-columns:1fr .95fr;gap:58px;align-items:center; }
+    .map-layer-pills { display:flex;flex-wrap:wrap;gap:9px;margin-top:25px; }
+    .map-layer-pills span { padding:8px 11px;border:1px solid #c6d5e6;border-radius:999px;background:#fff;color:#435064;font-size:12px;font-weight:850; }
+    .map-demo-card { overflow:hidden;border:1px solid #cbd7e5;border-radius:24px;background:#fff;box-shadow:0 25px 60px rgba(10,43,92,.14); }
+    .map-demo-head { display:flex;justify-content:space-between;align-items:center;padding:17px 19px;border-bottom:1px solid var(--border);color:var(--primary-dark); }
+    .map-demo-head span { color:var(--muted);font-size:12px;font-weight:800; }
+    .map-demo-canvas { position:relative;min-height:330px;overflow:hidden;background:linear-gradient(28deg,rgba(13,138,123,.06),transparent 42%),linear-gradient(145deg,#edf3f9,#f9fbfd); }
+    .demo-road { position:absolute;height:9px;border-radius:999px;background:#d5dce5;box-shadow:0 0 0 1px #c8d1dc; }
+    .road-a { width:430px;left:-55px;top:150px;transform:rotate(-18deg); }.road-b { width:390px;right:-90px;top:92px;transform:rotate(31deg); }.road-c { width:350px;left:25px;bottom:70px;transform:rotate(7deg); }
+    .demo-customer { position:absolute;width:31px;height:31px;display:grid;place-items:center;border-radius:50% 50% 50% 6px;transform:rotate(-45deg);background:var(--primary);color:#fff;font-size:9px;font-weight:950;box-shadow:0 8px 16px rgba(23,78,156,.22); }
+    .demo-customer::first-letter { transform:rotate(45deg); }
+    .demo-customer.c1{left:18%;top:24%}.demo-customer.c2{left:37%;top:52%}.demo-customer.c3{left:59%;top:27%}.demo-customer.c4{left:73%;top:62%}.demo-customer.c5{left:45%;top:76%}
+    .demo-tech { position:absolute;right:14%;top:40%;padding:8px 10px;border-radius:10px;background:var(--secondary);color:#fff;font-size:9px;font-weight:950;box-shadow:0 8px 18px rgba(13,138,123,.24); }
+    .map-demo-layers { display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:13px;background:#fff;color:var(--muted);font-size:10px;font-weight:800;text-align:center; }
+
+    /* PARTNERS / INVESTORS — deliberately secondary to customer CTA */
+    .partner-section { padding: 96px 0; background:linear-gradient(135deg,#071f43 0%,#0a2b5c 58%,#0a4a55 100%); color:#fff; }
+    .partner-grid { display:grid;grid-template-columns:1.02fr .98fr;gap:58px;align-items:start; }
+    .partner-eyebrow { color:#9adfd4;font-size:11px;font-weight:950;letter-spacing:.14em; }
+    .partner-copy h2 { margin:13px 0 17px;max-width:690px;font-size:clamp(38px,5vw,60px);line-height:1.02;letter-spacing:-.045em; }
+    .partner-copy>p { max-width:700px;margin:0;color:#d8e5f7;font-size:17px; }
+    .partner-types { display:grid;gap:11px;margin-top:28px; }
+    .partner-types div { padding:15px 16px;border:1px solid rgba(255,255,255,.14);border-radius:15px;background:rgba(255,255,255,.06); }
+    .partner-types strong,.partner-types span { display:block; }.partner-types strong { margin-bottom:4px;color:#fff;font-size:14px; }.partner-types span { color:#c9d8eb;font-size:12px; }
+    .business-model-note { margin-top:23px;padding:15px 16px;border-left:3px solid #5fd2c1;background:rgba(255,255,255,.05);color:#dce9f8;font-size:13px; }
+    .partner-form { padding:28px;border:1px solid rgba(255,255,255,.16);border-radius:24px;background:#fff;color:var(--text);box-shadow:0 26px 65px rgba(0,0,0,.24); }
+    .partner-form h3 { margin:0 0 5px;color:var(--primary-dark);font-size:25px; }.partner-form>p { margin:0 0 20px;color:var(--muted);font-size:13px; }
+    .partner-form .form-field input,.partner-form .form-field select,.partner-form .form-field textarea { width:100%;min-height:48px;padding:11px 13px;border:1px solid #c8d2df;border-radius:11px;background:#fbfcfe;color:var(--text);outline:none; }
+    .partner-form .form-field textarea { min-height:100px;resize:vertical; }
+    .partner-submit { width:100%;min-height:52px;border:0;border-radius:12px;background:var(--primary);color:#fff;font-weight:950;cursor:pointer;box-shadow:0 12px 25px rgba(23,78,156,.19); }
+    .partner-submit:disabled { opacity:.65;cursor:wait; }
+    .partner-disclaimer { margin:10px 0 0 !important;color:#818b98 !important;font-size:10px !important;text-align:center; }
+    .partner-success { display:none;margin-bottom:12px;padding:11px;border-radius:10px;background:#e7f7f2;color:#075f55;font-size:12px;font-weight:800; }
+    .partner-error { min-height:16px;margin-bottom:6px;color:var(--error);font-size:11px; }
+
+    @media (max-width: 900px) {
+      .company-heading,.map-sales-grid,.partner-grid { grid-template-columns:1fr; }
+      .company-role-grid { grid-template-columns:1fr; }
+      .map-demo-card { width:min(100%,620px); }
+    }
+    @media (max-width: 620px) {
+      .company-section,.map-sales-section,.partner-section { padding:72px 0; }
+      .map-demo-canvas { min-height:270px; }
+      .map-demo-layers { grid-template-columns:1fr 1fr; }
+      .partner-form { padding:21px 17px; }
+    }
+
   </style>
 </head>
 <body>
@@ -3282,11 +3436,12 @@
 <span>PestMoto</span>
 </a>
 <div class="nav-links">
+<a href="#companies">For Companies</a>
+<a href="#calendar">Dispatch</a>
+<a href="#live-map">Live Map</a>
 <a href="#proof-video">Proof Videos</a>
-<a href="#calendar">Calendar</a>
 <a href="#features">Features</a>
-<a href="#offline">Offline</a>
-<a href="#inventory">Inventory</a>
+<a href="#partners">Partners</a>
 <a class="nav-cta" href="#beta-form">Join Beta</a>
 </div>
 </div>
@@ -3301,31 +3456,31 @@
         <div class="ops-board-top">
           <div>
             <div class="ops-kicker">PestMoto Operations</div>
-            <h3>Today’s route, the next visit and the office picture — all connected.</h3>
+            <h3>Office scheduling and technician work finally share the same picture.</h3>
           </div>
-          <div class="ops-status">LIVE VIEW</div>
+          <div class="ops-status">CONNECTED</div>
         </div>
 
         <div class="ops-highlight-row">
           <div class="ops-highlight">
-            <strong>Next visit created</strong>
-            <span>Recurring customers can land back on the calendar automatically.</span>
+            <strong>30 / 60 / 90-day scheduling</strong>
+            <span>Recurring customers stay visible after the service is completed.</span>
           </div>
           <div class="ops-highlight">
-            <strong>AI pest identified</strong>
-            <span>Field photos can suggest a likely pest and save it with the account.</span>
+            <strong>Office map + layers</strong>
+            <span>Customer pins stay on the map; technician GPS appears as its own layer.</span>
           </div>
           <div class="ops-highlight">
-            <strong>Restock ready</strong>
-            <span>Upcoming route needs can be compared against truck inventory.</span>
+            <strong>Service rules</strong>
+            <span>Configured treatments connect technician selections to chemical records.</span>
           </div>
         </div>
 
         <div class="ops-main-grid">
           <div class="ops-calendar-card">
             <div class="ops-card-head">
-              <strong>Calendar</strong>
-              <span>Recurring scheduling</span>
+              <strong>Dispatch Calendar</strong>
+              <span>Routes + recurring work</span>
             </div>
             <div class="ops-weekdays">
               <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
@@ -3341,8 +3496,8 @@
               <div class="ops-day"><em>8</em><small>Monthly</small></div>
               <div class="ops-day"><em>9</em><small>Auto added</small></div>
               <div class="ops-day"><em>10</em><small>8 stops</small></div>
-              <div class="ops-day"><em>11</em><small>Reschedules</small></div>
-              <div class="ops-day"><em>12</em><small>Mosquito</small></div>
+              <div class="ops-day"><em>11</em><small>Reschedule</small></div>
+              <div class="ops-day"><em>12</em><small>60-day</small></div>
               <div class="ops-day"><em>13</em></div>
               <div class="ops-day"><em>14</em></div>
             </div>
@@ -3351,70 +3506,74 @@
           <div class="ops-route-card">
             <div class="ops-card-head">
               <strong>Today’s Route</strong>
-              <span>Steven • 8 stops</span>
+              <span>8 assigned stops</span>
             </div>
             <div class="ops-route-stop">
               <b>Jackson Residence</b>
-              <small>Quarterly service • Next visit auto-scheduled</small>
+              <small>Quarterly • Service record ready</small>
             </div>
             <div class="ops-route-stop">
               <b>Holloway Property</b>
-              <small>AI pest ID: American cockroach</small>
+              <small>Exterior + interior • Chemical log</small>
             </div>
             <div class="ops-route-stop">
               <b>Pine Terrace</b>
-              <small>Proof video sent • Customer summary ready</small>
+              <small>Proof video • Customer summary</small>
             </div>
           </div>
 
           <div class="ops-map-card">
             <div class="ops-card-head">
-              <strong>Property Treatment Map</strong>
-              <span>Last service markers</span>
+              <strong>Office Map</strong>
+              <span>Customers • Stops • Technicians</span>
             </div>
-            <div class="ops-map">
-              <div class="house-shape"></div>
-              <span class="map-pin pin-ant">Ant mound</span>
-              <span class="map-pin pin-rodent">Rodent entry</span>
-              <span class="map-pin pin-wasp">Wasp nest</span>
+            <div class="ops-map ops-company-map">
+              <div class="route-line route-line-one"></div>
+              <div class="route-line route-line-two"></div>
+              <span class="company-pin customer-pin-one">●</span>
+              <span class="company-pin customer-pin-two">●</span>
+              <span class="company-pin customer-pin-three">●</span>
+              <span class="company-pin tech-pin">T</span>
+              <span class="map-layer-label">Customer pins + GPS layer</span>
             </div>
           </div>
 
           <div class="ops-restock-card">
             <div class="ops-card-head">
-              <strong>Truck Restock</strong>
-              <span>Tomorrow morning</span>
+              <strong>Service Rules</strong>
+              <span>Configured by the office</span>
             </div>
             <ul class="restock-list">
-              <li><span>Alpine WSG</span><b>+ 3 packs</b></li>
-              <li><span>Demand CS</span><b>+ 1 bottle</b></li>
-              <li><span>Bifen Granules</span><b>+ 2 bags</b></li>
+              <li><span>Exterior treatment</span><b>Product + rate</b></li>
+              <li><span>Interior treatment</span><b>Product + rate</b></li>
+              <li><span>Truck inventory</span><b>Tracked</b></li>
             </ul>
           </div>
         </div>
-</div>
+      </div>
     </div>
 
     <div class="hero-copy-panel">
-      <h1 class="sales-headline">Run the route.<br><span>Document the work.</span><br>Keep the office ahead.</h1>
-      <p class="hero-lead">PestMoto connects the technician route with the office calendar, customer history, treatment records, proof videos, inventory and recurring scheduling. The field stays simple while the office gets a clearer picture of what happened today — and what needs to happen next.</p>
+      <div class="coming-inline"><span></span> PRODUCTION BETA FOR PEST-CONTROL COMPANIES</div>
+      <h1 class="sales-headline">Schedule it.<br><span>Service it.</span><br>Keep everything connected.</h1>
+      <p class="hero-lead">PestMoto is built specifically for pest-control companies that want the office and field team working from the same system. Build routes, manage customers, track recurring service, configure treatment rules, see customer and technician locations, and turn one technician closeout into the records the office needs.</p>
       <div class="button-row">
-        <a class="btn btn-primary" href="#beta-form">Join the Beta</a>
-        <a class="btn btn-secondary" href="#time-saving">See How It Saves Time</a>
+        <a class="btn btn-primary" href="#beta-form">Join the Company Beta</a>
+        <a class="btn btn-secondary" href="#companies">See the Workflow</a>
       </div>
 
       <div class="hero-benefit-grid">
         <div class="hero-benefit">
-          <strong>Calendar + route</strong>
-          <span>See today’s work and keep recurring visits from slipping through the cracks.</span>
+          <strong>Less office re-entry</strong>
+          <span>One service event feeds history, chemical records and customer-facing documentation.</span>
         </div>
         <div class="hero-benefit">
-          <strong>Property + proof</strong>
-          <span>Track what was found, what was treated and what the customer can actually see.</span>
+          <strong>Recurring work stays visible</strong>
+          <span>30, 60 and 90-day service plans connect completion to the next scheduling cycle.</span>
         </div>
         <div class="hero-benefit">
-          <strong>Inventory + follow-up</strong>
-          <span>Restock trucks, capture pest IDs and keep the office ahead of the next stop.</span>
+          <strong>Field stays field-focused</strong>
+          <span>Technicians get the route, customer context and service workflow without office clutter.</span>
         </div>
       </div>
     </div>
@@ -3423,22 +3582,10 @@
 
 <section class="value-strip">
 <div class="container value-grid">
-<div class="value">
-<strong>Route to Record</strong>
-<span>Questionnaire-driven service records</span>
-</div>
-<div class="value">
-<strong>Automatic Scheduling</strong>
-<span>Treatment data flows everywhere</span>
-</div>
-<div class="value">
-<strong>Proof of Service</strong>
-<span>A completed-service video customers can see</span>
-</div>
-<div class="value">
-<strong>Truck Readiness</strong>
-<span>Office stock + technician truck inventory</span>
-</div>
+<div class="value"><strong>Office + Field</strong><span>One connected operating workflow</span></div>
+<div class="value"><strong>30 / 60 / 90</strong><span>Recurring service scheduling</span></div>
+<div class="value"><strong>Live Map Layers</strong><span>Customers, stops and technician GPS</span></div>
+<div class="value"><strong>Route to Record</strong><span>Structured service + chemical documentation</span></div>
 </div>
 </section>
 <section class="proof-section" id="proof-video">
@@ -3492,6 +3639,34 @@
 </div>
 <p class="retention-note">Available to the customer for 30 days, then removed automatically.</p>
 </div>
+</div>
+</section>
+<section class="company-section" id="companies">
+<div class="container">
+  <div class="company-heading">
+    <div>
+      <div class="eyebrow"><span class="eyebrow-dot"></span> Made for pest-control companies</div>
+      <h2 class="section-title">One system for the people scheduling the work and the people doing it.</h2>
+    </div>
+    <p class="section-copy">Generic field-service software can make pest control feel like an afterthought. PestMoto is being built around recurring pest service, technician routes, treatment rules, chemical documentation, customer history and the daily handoff between the office and the field.</p>
+  </div>
+  <div class="company-role-grid">
+    <article class="company-role-card">
+      <span class="role-kicker">OFFICE</span>
+      <h3>Dispatch without rebuilding the day by hand.</h3>
+      <p>Manage customers, assign technicians, move route stops, review future recurring work and use the office map to see where the work is.</p>
+    </article>
+    <article class="company-role-card">
+      <span class="role-kicker">TECHNICIAN</span>
+      <h3>Open the stop, do the service, close it out.</h3>
+      <p>Route details, customer history, notify/navigation actions and a compact service questionnaire stay focused on what the technician needs next.</p>
+    </article>
+    <article class="company-role-card">
+      <span class="role-kicker">OWNER / MANAGER</span>
+      <h3>Keep service rules and operations under company control.</h3>
+      <p>Configure services, chemicals, rates, inventory and user roles while keeping technician records consistent across the company.</p>
+    </article>
+  </div>
 </div>
 </section>
 <section class="calendar-section" id="calendar">
@@ -3592,80 +3767,22 @@
 <section class="section" id="features">
 <div aria-hidden="true" class="features-bug-layer"></div>
 <div class="container">
-<div class="eyebrow"><span class="eyebrow-dot"></span> Built for pest control</div>
-<h2 class="section-title">One app from the first stop to the next scheduled visit.</h2>
-<p class="section-copy">PestMoto is built around the whole service cycle: plan the route, understand the property, perform the service, document it, show the customer, update inventory and keep the next visit on the calendar.</p>
+<div class="eyebrow"><span class="eyebrow-dot"></span> Current PestMoto workflow</div>
+<h2 class="section-title">The operating tools a pest-control company uses every day.</h2>
+<p class="section-copy">PestMoto connects the office application, technician Android app and central company data so scheduling, service work and records do not live in separate worlds.</p>
 <div class="feature-grid">
-<article class="feature-card">
-<div class="feature-icon">▦</div>
-<h3>Routes Without the Runaround</h3>
-<p>Open any service day, see the assigned stops and move work between dates or technicians as plans change.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">⌖</div>
-<h3>Everything the Tech Needs</h3>
-<p>Route list, map, customer details, notify, navigation and service actions stay within a few taps of the technician.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">⌂</div>
-<h3>Customer Context in Seconds</h3>
-<p>See the property, office notes, recent communication, previous treatments and service history before deciding what to do today.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">✓</div>
-<h3>One-Page Service Closeout</h3>
-<p>Pests, activity, conditions and treatments are captured on one compact service page built for fast field use.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">⚗</div>
-<h3>No Re-Typing Chemicals</h3>
-<p>Company treatment rules connect selected work to the expected products, rates and applications while still allowing a controlled field override when needed.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">✦</div>
-<h3>One Entry, Multiple Outputs</h3>
-<p>One completed service updates the records that matter: internal history, chemical documentation, customer communication and invoice description.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">▣</div>
-<h3>Office + Truck Inventory</h3>
-<p>Track office stock and technician truck stock with product details such as EPA registration numbers, standard dilution and application settings.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">↻</div>
-<h3>Built for Weak Coverage</h3>
-<p>Work from local device data when coverage disappears. Stops can still be completed and saved, then sync automatically when a reliable connection returns.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">▶</div>
-<h3>Proof of Service Videos</h3>
-<p>Capture a short after-service video and send it with the customer summary so the customer can see the finished work even when they were away.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">🗓</div>
-<h3>Calendar + Automatic Scheduling</h3>
-<p>Monthly, every-two-months and quarterly services can create the next calendar visit automatically, while office staff can review, move or override any appointment.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">⌖</div>
-<h3>Property Treatment Map</h3>
-<p>Mark ant mounds, wasp nests, rodent entry points, termite concerns and other problem areas on the property so future visits start with a visual history of where activity was found.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">AI</div>
-<h3>AI Pest Identification</h3>
-<p>Snap a field photo and use AI to suggest a likely pest identification, then keep that finding with the customer record for faster documentation and follow-up.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">▣</div>
-<h3>Automatic Truck Restock List</h3>
-<p>Upcoming routes and service requirements can be compared with truck inventory to build a practical restock list before the technician leaves for the day.</p>
-</article>
-<article class="feature-card">
-<div class="feature-icon">÷</div>
-<h3>Built-In Field Calculator</h3>
-<p>Handle dilution, quantity and everyday field math from the route screen without bouncing into another app.</p>
-</article>
+<article class="feature-card"><div class="feature-icon">▦</div><h3>Dispatch Calendar</h3><p>Plan service days, assign technicians, move work and keep upcoming recurring visits visible from the office.</p></article>
+<article class="feature-card"><div class="feature-icon">⌖</div><h3>Office Map with Layers</h3><p>Keep customer pins visible whether technicians are online or not. Toggle customer, scheduled-stop, technician GPS and route layers as needed.</p></article>
+<article class="feature-card"><div class="feature-icon">↗</div><h3>Route Management</h3><p>Build technician routes, reorder stops, move work between technicians and use geography to make the day easier to manage.</p></article>
+<article class="feature-card"><div class="feature-icon">◎</div><h3>Customer Accounts</h3><p>Keep contact information, service plan, office notes, upcoming service and service history tied to one customer record.</p></article>
+<article class="feature-card"><div class="feature-icon">30</div><h3>Recurring Scheduling</h3><p>Monthly, every-two-months and quarterly plans support 30, 60 and 90-day follow-up scheduling after qualifying completed services.</p></article>
+<article class="feature-card"><div class="feature-icon">✓</div><h3>One-Page Service Closeout</h3><p>Technicians capture pests, activity and work performed on one compact page instead of working through a long chain of questions.</p></article>
+<article class="feature-card"><div class="feature-icon">⚗</div><h3>Service + Chemical Rules</h3><p>Office configuration connects treatments to products, rates, methods and expected application records while preserving controlled overrides.</p></article>
+<article class="feature-card"><div class="feature-icon">▣</div><h3>Office + Truck Inventory</h3><p>Track company stock and technician truck stock with product details, EPA registration information and standard configuration.</p></article>
+<article class="feature-card"><div class="feature-icon">▶</div><h3>Proof of Service Videos</h3><p>Technicians can capture a short post-service video so customers can see the completed work, especially when they were not home.</p></article>
+<article class="feature-card"><div class="feature-icon">⌁</div><h3>Technician GPS</h3><p>Office users can see recent technician locations as a map layer while customer locations remain available independently.</p></article>
+<article class="feature-card"><div class="feature-icon">↻</div><h3>Offline-First Field Work</h3><p>Core route and service data stays available locally so the technician can keep working through weak coverage and sync when connectivity returns.</p></article>
+<article class="feature-card"><div class="feature-icon">👥</div><h3>Company User Accounts</h3><p>Separate administrator, office and technician accounts keep company configuration and technician workflows appropriately separated.</p></article>
 </div>
 </div>
 </section>
@@ -3758,7 +3875,7 @@
 <h2 class="section-title" style="font-size:clamp(34px,4.7vw,52px);">
             Know what is on the truck before the route needs it.
           </h2>
-<p class="section-copy">Office stock and truck stock live in the same system. Product details stay tied to service rules, and upcoming routes can help create a restock list before shortages become tomorrow morning’s problem.</p>
+<p class="section-copy">Office stock and technician truck stock live in the same system. Product information stays tied to service configuration so the office can see what is available, what belongs on each truck and what needs attention before the next route.</p>
 </div>
 <div class="opportunity-card">
 <div class="opportunity-head">
@@ -3965,34 +4082,33 @@
 </div>
 </div>
 </section>
-<section class="section" style="background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-<div class="container opportunity-wrap">
+<section class="map-sales-section" id="live-map">
+<div class="container map-sales-grid">
 <div>
-<div class="eyebrow"><span class="eyebrow-dot"></span> Service opportunities</div>
-<h2 class="section-title" style="font-size:clamp(34px,4.7vw,52px);">Make field observations useful after the technician leaves.</h2>
-<p class="section-copy">Important findings should not disappear inside a paragraph. Property map markers, AI-assisted pest identification, specialty-pest flags and service history give the office clearer signals about what may need follow-up.</p>
+  <div class="eyebrow"><span class="eyebrow-dot"></span> Office map</div>
+  <h2 class="section-title" style="font-size:clamp(36px,4.8vw,56px);">The map should be useful before a single technician logs in.</h2>
+  <p class="section-copy">PestMoto keeps customer locations on the office map as the permanent operating layer. Scheduled stops, technician GPS and route lines can be added or removed without making the customer map disappear.</p>
+  <div class="map-layer-pills">
+    <span>Customer pins</span><span>Scheduled stops</span><span>Technician GPS</span><span>Route lines</span>
+  </div>
 </div>
-<div class="opportunity-card">
-<div class="opportunity-head">
-<strong>Garcia Residence</strong>
-<span class="red-flag">⚑ OFFICE FOLLOW-UP</span>
-</div>
-<div class="specialties">
-<span class="specialty">Mosquitoes</span>
-<span class="specialty">Termites</span>
-<span class="specialty">Bed Bugs</span>
-<span class="specialty">Roaches</span>
-<span class="specialty">Rats / Mice</span>
-</div>
+<div class="map-demo-card" aria-label="Illustration of PestMoto office map layers">
+  <div class="map-demo-head"><strong>Office Map</strong><span>4 layers</span></div>
+  <div class="map-demo-canvas">
+    <span class="demo-road road-a"></span><span class="demo-road road-b"></span><span class="demo-road road-c"></span>
+    <span class="demo-customer c1">1</span><span class="demo-customer c2">2</span><span class="demo-customer c3">3</span><span class="demo-customer c4">4</span><span class="demo-customer c5">5</span>
+    <span class="demo-tech">TECH</span>
+  </div>
+  <div class="map-demo-layers"><span>● Customers</span><span>◆ Stops</span><span>▣ Technicians</span><span>— Routes</span></div>
 </div>
 </div>
 </section>
 <section class="beta-section" id="beta">
 <div class="container beta-grid">
 <div class="beta-copy">
-<div class="eyebrow"><span class="eyebrow-dot"></span> PestMoto beta</div>
-<h2>Want to test a more connected pest-control workflow?</h2>
-<p>PestMoto brings together scheduling, routes, service documentation, Proof of Service Videos, treatment mapping, AI pest identification, inventory and offline field work. We are looking for technicians, owners, managers and office staff to put the full workflow through real-world beta testing.</p>
+<div class="eyebrow"><span class="eyebrow-dot"></span> PestMoto company beta</div>
+<h2>Run a pest-control company? Help us pressure-test the real workflow.</h2>
+<p>The PestMoto beta is for pest-control owners, managers, office staff and technicians who want to test connected scheduling, routes, customers, live mapping, recurring service, chemical records, inventory, Proof of Service Videos and offline field work in day-to-day operations.</p>
 <div style="margin-top:22px;padding:16px 18px;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.82);box-shadow:0 8px 24px rgba(10,43,92,.05);">
 <div style="font-size:11px;font-weight:900;letter-spacing:.10em;color:var(--primary);text-transform:uppercase;">Created by</div>
 <div style="margin-top:4px;font-size:18px;font-weight:900;color:var(--primary-dark);">Steven Weeks</div>
@@ -4001,15 +4117,15 @@
 <div class="beta-points">
 <div class="beta-point">
 <span class="check">✓</span>
-<span>See how much repetitive technician entry PestMoto can remove.</span>
+<span>Test whether PestMoto reduces duplicate entry between technicians and the office.</span>
 </div>
 <div class="beta-point">
 <span class="check">✓</span>
-<span>Test the one-page closeout, routes, chemical records, offline workflow and automatic syncing.</span>
+<span>Test routes, customer management, the one-page closeout, chemical records, offline workflow and automatic syncing.</span>
 </div>
 <div class="beta-point">
 <span class="check">✓</span>
-<span>Help shape automatic recurring scheduling and the next round of time-saving field tools.</span>
+<span>Help shape dispatch, 30/60/90-day recurring scheduling, map layers and the tools your office actually needs.</span>
 </div>
 </div>
 </div>
@@ -4080,6 +4196,36 @@
 </form>
 </div>
 </section>
+
+<section class="partner-section" id="partners">
+<div class="container partner-grid">
+  <div class="partner-copy">
+    <div class="partner-eyebrow">STRATEGIC PARTNERS + INVESTORS</div>
+    <h2>Interested in helping PestMoto grow beyond the beta?</h2>
+    <p>PestMoto is being built as recurring B2B software for pest-control companies. We are open to a small number of conversations with people who can bring industry experience, operating-company pilots, distribution, technology relationships or growth capital.</p>
+    <div class="partner-types">
+      <div><strong>Pest-control operating partner</strong><span>Run the product with a real team and help shape workflows that matter.</span></div>
+      <div><strong>Strategic / industry investor</strong><span>Bring capital, field-service experience or a useful path to scale.</span></div>
+      <div><strong>Technology / channel partner</strong><span>Explore integrations, distribution or complementary services for pest-control companies.</span></div>
+    </div>
+    <div class="business-model-note"><strong>Commercial direction:</strong> recurring software subscriptions for pest-control companies, designed to scale with team size as PestMoto moves beyond beta.</div>
+  </div>
+  <form action="https://formspree.io/f/xaeyeewy" class="partner-form" id="partner-form" method="POST">
+    <input type="hidden" name="inquiry_type" value="PestMoto strategic partner / investor"/>
+    <h3>Start a private conversation</h3>
+    <p>Tell us who you are and how you see yourself participating.</p>
+    <div class="partner-success" id="partner-success">Thanks — your message was sent.</div>
+    <div class="partner-error" id="partner-error"></div>
+    <div class="form-field"><label for="partner-name">Name *</label><input id="partner-name" name="name" type="text" autocomplete="name" required placeholder="Your name"/></div>
+    <div class="form-field"><label for="partner-email">Email *</label><input id="partner-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com"/></div>
+    <div class="form-field"><label for="partner-company">Company / organization</label><input id="partner-company" name="company" type="text" autocomplete="organization" placeholder="Company or organization"/></div>
+    <div class="form-field"><label for="partner-interest">I’m interested in</label><select id="partner-interest" name="interest"><option value="">Select</option><option>Operating / beta partnership</option><option>Strategic investment</option><option>Technology / integration partnership</option><option>Sales / channel partnership</option><option>Other</option></select></div>
+    <div class="form-field"><label for="partner-message">Message</label><textarea id="partner-message" name="message" placeholder="A little about you, your company, and why PestMoto caught your attention."></textarea></div>
+    <button class="partner-submit" type="submit">START A CONVERSATION</button>
+    <p class="partner-disclaimer">This is an invitation to discuss potential strategic relationships. It is not an offer to sell securities.</p>
+  </form>
+</div>
+</section>
 </main>
 <footer>
 <div class="container footer-inner">
@@ -4087,7 +4233,7 @@
 <span class="footer-dot">P</span>
         PestMoto
       </div>
-<div>Steven Weeks • Owner &amp; Creator</div>
+<div>Steven Weeks • Owner &amp; Creator &nbsp;•&nbsp; <a href="#partners" style="color:var(--primary);font-weight:800;">Partners</a></div>
 <div>© 2026 PestMoto. All rights reserved.</div>
 </div>
 </footer>
@@ -4102,5 +4248,41 @@
     });
   </script>
 <script defer="" src="https://unpkg.com/@formspree/ajax@1"></script>
+
+<script>
+  (function () {
+    const form = document.getElementById('partner-form');
+    if (!form) return;
+    const success = document.getElementById('partner-success');
+    const error = document.getElementById('partner-error');
+    const button = form.querySelector('.partner-submit');
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      error.textContent = '';
+      success.style.display = 'none';
+      button.disabled = true;
+      const oldText = button.textContent;
+      button.textContent = 'SENDING...';
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!response.ok) throw new Error('Unable to send right now.');
+        form.reset();
+        success.style.display = 'block';
+      } catch (e) {
+        error.textContent = 'Could not send the message. Please try again.';
+      } finally {
+        button.disabled = false;
+        button.textContent = oldText;
+      }
+    });
+  })();
+</script>
+
 </body>
 </html>
+PestMoto-Website-Commercial-Beta.html
+HTML
