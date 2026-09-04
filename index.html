@@ -116,7 +116,35 @@
 
     @media(max-width:1050px){.hero-grid,.split,.tech-split,.beta-grid,.partner-grid{grid-template-columns:1fr}.outcome-grid{grid-template-columns:repeat(2,1fr)}.cap-grid,.role-grid{grid-template-columns:repeat(2,1fr)}.service-grid{grid-template-columns:1fr}.hero-proof{max-width:700px}.crm-shell{max-width:760px;margin:0 auto}.split .mock-frame{order:2}}
     @media(max-width:780px){.navlinks,.navcta .btn{display:none}.menu{display:block}.topbar.open .nav{height:auto;min-height:76px;flex-wrap:wrap;padding:14px 0}.topbar.open .navlinks{display:flex;width:100%;flex-direction:column;align-items:flex-start;gap:12px;padding-bottom:12px}.hero{padding-top:62px}.hero-proof,.outcome-grid,.cap-grid,.role-grid,.catalog{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}.dash-grid{grid-template-columns:1fr}.crm-layout{grid-template-columns:96px 1fr}.route-cols{grid-template-columns:1fr}.cust-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer{flex-direction:column;align-items:flex-start}.section{padding:70px 0}}
-  </style>
+  
+  /* V6: real map-style CRM mockup */
+  .ops-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,.7fr);gap:24px;align-items:stretch}
+  .ops-card{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);overflow:hidden}
+  .ops-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;border-bottom:1px solid var(--line);background:#fff}
+  .ops-head strong{font-size:18px;color:var(--navy)}
+  .ops-head span{font-size:12px;color:var(--muted);font-weight:800}
+  .map-toolbar{display:flex;gap:8px;flex-wrap:wrap}
+  .layer-chip{padding:8px 10px;border:1px solid #d8e3f2;border-radius:999px;background:#f7faff;font-size:10px;font-weight:900;color:#38506f}
+  .layer-chip.on{background:#eaf3ff;border-color:#b8d2f6;color:#1454a0}
+  .map-wrap{position:relative;min-height:430px;background:#eef4ed;overflow:hidden}
+  .map-wrap svg{display:block;width:100%;height:100%;min-height:430px}
+  .map-legend{position:absolute;left:18px;bottom:18px;display:flex;gap:12px;flex-wrap:wrap;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.94);border:1px solid rgba(15,40,80,.10);box-shadow:0 10px 28px rgba(16,46,91,.12);font-size:10px;font-weight:800;color:#476078}
+  .legend-dot{display:inline-flex;align-items:center;gap:6px}
+  .legend-dot i{display:inline-block;width:10px;height:10px;border-radius:50%}
+  .legend-customer i{background:#fff;border:3px solid #1765c1}
+  .legend-stop i{background:#1765c1}
+  .legend-tech i{background:#0e9a84}
+  .catalog-stack{padding:18px;display:grid;gap:12px}
+  .catalog-step{padding:16px;border:1px solid #dce6f3;border-radius:18px;background:#f9fbfe}
+  .catalog-step small{display:block;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#65809e;margin-bottom:5px}
+  .catalog-step strong{display:block;font-size:16px;color:#12396f;margin-bottom:5px}
+  .catalog-step p{margin:0;color:#697a91;font-size:12px;line-height:1.45}
+  .catalog-example{padding:16px;border-radius:18px;background:#0e2f67;color:#fff}
+  .catalog-example strong{display:block;font-size:14px;margin-bottom:8px}
+  .catalog-example span{display:block;color:#d6e3f5;font-size:11px;line-height:1.5}
+  @media (max-width:900px){.ops-grid{grid-template-columns:1fr}.map-wrap,.map-wrap svg{min-height:360px}}
+
+</style>
 </head>
 <body>
   <header class="topbar" id="topbar">
@@ -355,6 +383,99 @@
             <div class="tier"><span class="num">2</span><strong>Treatment</strong><p>The work performed: web sweep, exterior spray, weep-hole injection, granulation, baiting, trapping, crack-and-crevice work, inspection, etc.</p></div>
             <div class="tier"><span class="num">3</span><strong>Chemical / Product</strong><p>The product tied to the treatment, including default rate, quantity, method, and inventory deduction.</p></div>
             <div class="example"><strong>Example:</strong> Quarterly Pest Control can include Web Sweep + Exterior Spray + Weep-Hole Injection + Granulation, with each treatment connected to its own product and application record.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section alt" id="map">
+      <div class="container">
+        <div class="eyebrow">Mapping + service configuration</div>
+        <h2>See the territory. Configure the work behind it.</h2>
+        <p class="lede">The office map is a real operational view of customers, scheduled stops, technician locations, and routes. Service configuration stays separate and follows the same structure used throughout the CRM: Service → Treatment → Chemical.</p>
+
+        <div class="ops-grid">
+          <div class="ops-card">
+            <div class="ops-head">
+              <div><strong>Live Operations Map</strong><span style="display:block;margin-top:3px">Customers · Scheduled stops · Technicians · Routes</span></div>
+              <div class="map-toolbar">
+                <span class="layer-chip on">Customers</span>
+                <span class="layer-chip on">Stops</span>
+                <span class="layer-chip on">Techs</span>
+                <span class="layer-chip on">Routes</span>
+              </div>
+            </div>
+            <div class="map-wrap">
+              <svg viewBox="0 0 900 520" role="img" aria-label="PestMoto live operations map mockup with streets, customer pins, scheduled stops, technician location and route line">
+                <rect width="900" height="520" fill="#eef4ed"/>
+                <path d="M0 78 C135 62 205 115 330 86 C470 54 575 65 900 30 L900 0 L0 0Z" fill="#dfeee1"/>
+                <path d="M664 0 C720 90 733 176 700 255 C679 308 700 384 900 430 L900 0Z" fill="#d9edf2"/>
+                <g fill="#e4e9df" stroke="#d7dfd3" stroke-width="1">
+                  <path d="M55 112h155v84H55z"/><path d="M235 118h112v68H235z"/><path d="M384 100h140v88H384z"/>
+                  <path d="M64 232h134v82H64z"/><path d="M228 218h150v90H228z"/><path d="M408 224h128v80H408z"/>
+                  <path d="M74 355h120v92H74z"/><path d="M230 344h148v103H230z"/><path d="M417 352h118v92H417z"/>
+                  <path d="M560 104h92v90h-92z"/><path d="M548 236h104v76H548z"/><path d="M556 353h98v95h-98z"/>
+                </g>
+                <g stroke="#ffffff" stroke-linecap="round" fill="none">
+                  <path d="M-20 160 C150 190 250 145 382 165 S640 235 920 204" stroke-width="34"/>
+                  <path d="M130 -20 C150 118 185 226 208 540" stroke-width="25"/>
+                  <path d="M350 -20 C357 100 345 242 363 540" stroke-width="22"/>
+                  <path d="M522 -20 C520 120 502 248 520 540" stroke-width="21"/>
+                  <path d="M-20 330 C170 303 350 337 520 318 S700 292 930 320" stroke-width="27"/>
+                </g>
+                <g stroke="#c5d4e4" stroke-width="2" fill="none">
+                  <path d="M-20 160 C150 190 250 145 382 165 S640 235 920 204"/>
+                  <path d="M130 -20 C150 118 185 226 208 540"/>
+                  <path d="M350 -20 C357 100 345 242 363 540"/>
+                  <path d="M522 -20 C520 120 502 248 520 540"/>
+                  <path d="M-20 330 C170 303 350 337 520 318 S700 292 930 320"/>
+                </g>
+                <g stroke="#ffffff" stroke-width="11" fill="none" stroke-linecap="round">
+                  <path d="M45 90 L300 410"/><path d="M76 430 L455 70"/><path d="M250 60 L590 408"/><path d="M78 268 L606 260"/>
+                  <path d="M445 458 L620 95"/><path d="M560 458 L690 155"/><path d="M620 360 L835 140"/>
+                </g>
+                <g font-family="Arial, sans-serif" font-size="13" fill="#7c8c99" font-weight="700">
+                  <text x="390" y="152" transform="rotate(8 390 152)">Main Parkway</text>
+                  <text x="178" y="265" transform="rotate(83 178 265)">Oak Ridge Dr</text>
+                  <text x="370" y="290" transform="rotate(-1 370 290)">Pinecrest Rd</text>
+                  <text x="590" y="334" transform="rotate(-47 590 334)">Lakeview Blvd</text>
+                  <text x="717" y="72">North Service Area</text>
+                </g>
+                <polyline points="172,382 278,306 392,254 514,283 632,214 742,162" fill="none" stroke="#256ee8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+                <polyline points="172,382 278,306 392,254 514,283 632,214 742,162" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+                <g font-family="Arial, sans-serif" font-weight="900" text-anchor="middle">
+                  <g transform="translate(172 382)"><circle r="18" fill="#fff" stroke="#1765c1" stroke-width="5"/><text y="5" font-size="13" fill="#1765c1">1</text></g>
+                  <g transform="translate(278 306)"><circle r="18" fill="#1765c1"/><text y="5" font-size="13" fill="#fff">2</text></g>
+                  <g transform="translate(392 254)"><circle r="18" fill="#fff" stroke="#1765c1" stroke-width="5"/><text y="5" font-size="13" fill="#1765c1">3</text></g>
+                  <g transform="translate(514 283)"><circle r="18" fill="#1765c1"/><text y="5" font-size="13" fill="#fff">4</text></g>
+                  <g transform="translate(632 214)"><circle r="18" fill="#fff" stroke="#1765c1" stroke-width="5"/><text y="5" font-size="13" fill="#1765c1">5</text></g>
+                  <g transform="translate(742 162)"><circle r="22" fill="#0e9a84"/><text y="5" font-size="14" fill="#fff">T</text></g>
+                  <g transform="translate(460 392)"><circle r="14" fill="#fff" stroke="#1765c1" stroke-width="4"/></g>
+                  <g transform="translate(85 220)"><circle r="14" fill="#fff" stroke="#1765c1" stroke-width="4"/></g>
+                  <g transform="translate(585 110)"><circle r="14" fill="#fff" stroke="#1765c1" stroke-width="4"/></g>
+                </g>
+                <g font-family="Arial, sans-serif">
+                  <g transform="translate(599 238)"><rect width="174" height="52" rx="12" fill="#fff" stroke="#d4e0ee"/><text x="14" y="21" font-size="12" font-weight="900" fill="#173d70">Marcus · Route A</text><text x="14" y="39" font-size="10" fill="#73859a">8 stops · 36 miles</text></g>
+                </g>
+              </svg>
+              <div class="map-legend">
+                <span class="legend-dot legend-customer"><i></i>Customer</span>
+                <span class="legend-dot legend-stop"><i></i>Scheduled stop</span>
+                <span class="legend-dot legend-tech"><i></i>Technician</span>
+                <span>Blue line = route</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ops-card">
+            <div class="ops-head"><div><strong>Service Configuration</strong><span style="display:block;margin-top:3px">Configured by the office</span></div></div>
+            <div class="catalog-stack">
+              <div class="catalog-step"><small>1 · Service</small><strong>Quarterly Pest Control</strong><p>The customer-facing plan or job.</p></div>
+              <div class="catalog-step"><small>2 · Treatments</small><strong>Web Sweep · Exterior Spray · Injection · Granulation</strong><p>The work the technician performs.</p></div>
+              <div class="catalog-step"><small>3 · Chemicals / Products</small><strong>Product + rate + method + quantity</strong><p>The application details tied to each treatment.</p></div>
+              <div class="catalog-example"><strong>Specialty services use the same structure.</strong><span>Termite · Mosquito · Bed Bug · Rodent Control · Exclusion · German Roach · Flea · Fire Ant · Wasp</span></div>
+            </div>
           </div>
         </div>
       </div>
