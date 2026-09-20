@@ -425,3 +425,280 @@ button,input,select,textarea{font:inherit}
 .error-page{min-height:70vh;display:grid;place-items:center;text-align:center;padding:80px 0}
 .error-page h1{font-size:clamp(42px,8vw,72px);letter-spacing:-.05em;margin:0 0 12px}
 .error-page p{color:var(--muted);max-width:520px;margin:0 auto 24px}
+
+/* === PestMoto V4 Navy Brand Sync === */
+:root{
+  --green:#4ea1ff;
+  --green-2:#70b7ff;
+  --forest:#173a63;
+  --deep:#081827;
+  --deeper:#040b14;
+  --ink:#e9f1fb;
+  --muted:#91a5bc;
+  --line:#223a55;
+  --soft:#0d1c2c;
+  --mint:#102944;
+  --cream:#071321;
+  --accent:#69b7ff;
+  --glow:rgba(78,161,255,.24);
+  --shadow:0 28px 80px rgba(0,7,18,.42);
+  --shadow-sm:0 14px 40px rgba(0,7,18,.28);
+}
+
+html{background:#040b14}
+body{
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 82% -10%,rgba(58,129,205,.13),transparent 34%),
+    linear-gradient(180deg,#071321 0%,#081727 42%,#071321 100%);
+}
+
+.site-header{
+  background:rgba(4,11,20,.88);
+  border-bottom:1px solid rgba(105,183,255,.15);
+  box-shadow:0 10px 40px rgba(0,0,0,.2);
+}
+.main-nav a,.nav-more{color:#afc4da}
+.main-nav a:hover,.main-nav a:focus-visible,.nav-more:hover{color:#fff}
+.nav-panel,.main-nav.open{background:#0a1929;border-color:#294766}
+.nav-panel a{color:#b8cce0}
+.nav-panel a:hover{background:rgba(78,161,255,.12)}
+
+.brand-name .moto{color:#69b7ff}
+.brand-mark path:nth-of-type(2){stroke:#69b7ff}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline-color:rgba(105,183,255,.42)
+}
+.btn-primary{
+  background:linear-gradient(135deg,#2468a8,#4ea1ff);
+  box-shadow:0 12px 32px rgba(24,103,180,.32)
+}
+.btn-secondary{
+  background:#0e2134;
+  border-color:#315475;
+  color:#dcecff
+}
+.btn-secondary:hover{background:#132a42}
+.btn-ghost,.btn-outline-light{
+  border-color:rgba(132,190,245,.24);
+  background:rgba(78,161,255,.07)
+}
+.btn-white{background:#eaf4ff;color:#0a1a2a}
+.text-link,.inline-link,.product-shot figcaption a,.story-grid a,.page-body .prose a{color:#69b7ff}
+.kicker,.story-grid article>span,.final-inner .eyeline,.form-head small{color:#69b7ff}
+
+.hero{
+  background:
+    radial-gradient(ellipse 75% 55% at 70% -10%,rgba(78,161,255,.22),transparent 58%),
+    radial-gradient(ellipse 45% 40% at 8% 38%,rgba(35,85,145,.22),transparent 54%),
+    linear-gradient(180deg,#040b14 0%,#071525 48%,#0b2340 74%,#071321 74.1%,#071321 100%);
+}
+.hero-glow{
+  background-image:
+    linear-gradient(rgba(105,183,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(105,183,255,.045) 1px,transparent 1px)
+}
+.hero .kicker,.hero h1 span{color:#69b7ff}
+.hero-lede{color:#a9bdd3}
+.hero .text-link{color:#a8d2ff}
+.hero-pillars li{
+  border-color:rgba(105,183,255,.25);
+  background:rgba(78,161,255,.08);
+  color:#d7ebff
+}
+.browser-frame{
+  background:#081522;
+  border-color:rgba(105,183,255,.2);
+  box-shadow:0 42px 110px rgba(0,0,0,.5)
+}
+.browser-bar{background:#050e18;color:#7890a8}
+.browser-bar i{background:#27415b}
+.hero-proof{background:rgba(105,183,255,.16);border-color:rgba(105,183,255,.2)}
+.hero-proof span{background:#081827;color:#91a7bd}
+.hero-proof b{color:#eaf4ff}
+
+.signal-strip,
+.dispatch,
+.knowledge-section,
+.connected,
+.field,
+.explore-band,
+.pilot,
+.final-cta,
+.workflow,
+.office-section,
+.migration,
+.page-body{
+  background:#081421;
+  border-color:var(--line);
+}
+.signal-strip{border-top-color:#203a55;border-bottom-color:#203a55}
+.signal-grid>div{border-color:#203a55}
+.signal-grid strong{color:#e8f1fb}
+.signal-grid span{color:#8fa4ba}
+
+.section-heading h2,.copy h2,.section-heading p,.copy>p{color:inherit}
+.section-heading p,.copy>p{color:#91a5bc}
+
+.decision-card,
+.product-shot,
+.tech-points>div,
+.story-grid article,
+.conn-ring article,
+.related-grid a,
+.lead-form,
+.flow-step,
+.source-card,
+.feature-cards article,
+.faq-list details{
+  background:linear-gradient(180deg,#0e2134,#0b1b2b);
+  border-color:#24425f;
+  color:#e8f1fb;
+  box-shadow:var(--shadow-sm)
+}
+.decision-top{border-color:#24425f}
+.decision-top span{color:#69b7ff}
+.decision-top small,
+.product-shot figcaption,
+.story-grid p,
+.conn-ring span,
+.tech-points span,
+.related-grid a span,
+.source-card span,
+.feature-cards p,
+.faq-list details p,
+.plain-list p,
+.copy .fine{color:#91a5bc}
+.decision-factors span{
+  background:#10263c;
+  border-color:#294969;
+  color:#cfe2f6
+}
+.decision-factors span.soon{
+  background:#172436;
+  border-color:#5b6170;
+  color:#d8dfea
+}
+.decision-result,.page-cta,.pest-card,.flow-step.hot{
+  background:linear-gradient(135deg,#071525,#174b7d)
+}
+
+.inventory-section,
+.zap-section,
+.tie-section,
+.automatic,
+.demo-band,
+.footer{
+  background:
+    radial-gradient(circle at 82% 0%,rgba(78,161,255,.12),transparent 34%),
+    linear-gradient(180deg,#040b14,#071525);
+}
+.inventory-section .section-heading p,
+.zap-section .copy>p,
+.tie-section .section-heading p,
+.inv-note,
+.demo-inner p,
+.footer-brand p{color:#91a5bc}
+.inv-nodes li,.tie-steps li{
+  background:rgba(78,161,255,.055);
+  border-color:rgba(105,183,255,.19)
+}
+.inv-nodes span,.conn-hub span{color:#8fa7be}
+.inv-note strong,.tie-disclaimer strong{color:#69b7ff}
+.tie-disclaimer{border-color:rgba(105,183,255,.28);color:#91a5bc}
+
+.knowledge-panel,
+.zap-ui{
+  background:linear-gradient(155deg,rgba(20,57,91,.8),rgba(7,21,37,.92));
+  border-color:rgba(105,183,255,.23);
+  box-shadow:0 30px 90px rgba(0,0,0,.4)
+}
+.kp-bar,.zap-search{background:rgba(1,9,17,.46);border-color:rgba(148,199,246,.14)}
+.kp-bar kbd,.zap-key{background:rgba(78,161,255,.14);color:#7fc1ff}
+.kp-bar span,.zap-hint,.zap-foot{color:#849ab0}
+.kp-cols>div,.zap-columns>div{background:rgba(78,161,255,.045);border-color:rgba(148,199,246,.13)}
+.kp-cols small,.zap-columns small{color:#69b7ff}
+.kp-cols button,.zap-columns button{color:#dcecff}
+.kp-cols button.active,.zap-columns button.active{background:#2f7fc8;color:#fff}
+.kp-cols p,.zap-columns span{color:#9fb3c8}
+.zap-examples span{border-color:rgba(148,199,246,.14);background:rgba(78,161,255,.05)}
+.zap-examples i{color:#69b7ff}
+
+.chain-row span{
+  background:#102944;
+  border-color:#285071;
+  color:#d9eaff
+}
+.chain-row i{color:#6283a3}
+.plain-bullets li,.plain-list p,.pilot-steps>div{border-color:#213a54}
+.plain-bullets li{color:#9eb1c4}
+.plain-bullets b,.plain-list b{color:#eef6ff}
+
+.conn-hub{
+  background:linear-gradient(145deg,#071525,#174b7d);
+  border-color:rgba(105,183,255,.34);
+  box-shadow:0 20px 55px rgba(13,71,123,.3)
+}
+
+.phone-shot{background:#050b12;border-color:#050b12}
+.related-grid a:hover{border-color:#4b83b8;box-shadow:0 18px 45px rgba(0,7,18,.35)}
+
+.pilot-steps span,.merge-arrow span{
+  background:#102e4b;
+  color:#78bdff
+}
+.pilot-steps small{color:#8fa4ba}
+
+.form-grid label{color:#bed0e2}
+.form-grid input,.form-grid select,.form-grid textarea{
+  background:#071522;
+  border-color:#2a4864;
+  color:#e9f2fb
+}
+.form-grid input::placeholder,.form-grid textarea::placeholder{color:#71879c}
+.form-head p,.form-status{color:#91a5bc}
+.form-status.error{color:#ff8f8f}
+
+.footer-grid a{color:#9eb5ca}
+.footer-bottom{color:#6f879e}
+.footer-grid a:hover{color:#fff}
+
+.page-hero{
+  background:
+    radial-gradient(circle at 88% 16%,rgba(78,161,255,.12),transparent 30%),
+    linear-gradient(180deg,#071525 0%,#081421 76%);
+}
+.page-hero .breadcrumb{color:#8da3b9}
+.page-hero .breadcrumb a{color:#69b7ff}
+.page-hero .lede,
+.page-body .prose p,
+.page-body .prose li{color:#9eb1c4}
+.page-body .prose h3{color:#e7f0fb}
+.faq-list summary{color:#eaf3fc}
+
+.soon-inline{
+  color:#83c4ff;
+  background:#102c47;
+  border:1px solid #254e72
+}
+.badge-soon{color:#071525;background:#69b7ff}
+
+.automatic .copy>p,.answer-stack small{color:#9eb5ca}
+.answer-stack>div{border-color:rgba(148,199,246,.14)}
+.answer-stack span{background:#2f7fc8}
+.records-arrow{color:#69b7ff}
+.record-pills span{color:#dcecff;border-color:rgba(148,199,246,.15);background:rgba(78,161,255,.06)}
+
+.migration-visual .pest-card{background:linear-gradient(160deg,#071525,#174b7d)}
+.merge-arrow span{background:#102d49;color:#79bdff}
+
+.inv-svg line,.inv-svg path{stroke:#69b7ff}
+.inv-svg marker path{fill:#69b7ff}
+.inv-svg text{fill:#7f98b0}
+
+@media(max-width:820px){
+  .main-nav{background:#091827;border-color:#294766}
+}
+
+::selection{background:rgba(78,161,255,.32);color:#fff}
+/* === End PestMoto V4 Navy Brand Sync === */
